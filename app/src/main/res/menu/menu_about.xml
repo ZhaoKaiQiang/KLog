@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/action_github"
+        android:orderInCategory="100"
+        android:title="GITHUB"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_csdn"
+        android:orderInCategory="100"
+        android:title="CSDN"
+        app:showAsAction="always" />
+</menu>

@@ -1,7 +1,11 @@
-package com.socks.klog;
+package com.socks.sample;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.socks.library.KLog;
@@ -48,7 +52,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void logWithJson(View view) {
         KLog.json(JSON);
+    }
+
+    public void logWithJsonTag(View view) {
         KLog.json(TAG, JSON);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_about, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_github:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/ZhaoKaiQiang/KLog")));
+                break;
+            case R.id.action_csdn:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://blog.csdn.net/zhaokaiqiang1992")));
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
