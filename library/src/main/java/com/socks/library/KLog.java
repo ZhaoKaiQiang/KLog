@@ -13,10 +13,10 @@ import org.json.JSONObject;
  * <li>use KLog.d(),you could print whether the method execute,and the default tag is current class's name</li>
  * <li>use KLog.d(msg),you could print log as before,and you could location the method with a click in Android Studio Logcat</li>
  * <li>use KLog.json(),you could print json string with well format automatic</li>
- * <ol/>
+ * </ol>
  *
  * @author zhaokaiqiang
- * @see
+ *         github https://github.com/ZhaoKaiQiang/KLog
  */
 public class KLog {
 
