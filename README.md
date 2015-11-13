@@ -16,9 +16,7 @@ Android LogCat 工具类，支持行号、所在函数、点击自动跳转、Js
 
 ##Sample Usage
 
-The main mothod you may use
-
-![](http://i13.tietuku.com/6975553e0ea34af7.png)
+![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/demo.gif)
 
 ###KLog.d()
 
