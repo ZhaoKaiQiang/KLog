@@ -44,6 +44,14 @@ you can print a String with json format ,and it will be formated as following
 as same as above , but with a tag whitch are set by yourself
 ![](http://i13.tietuku.com/bc9714547a4f50fe.png)
 
+##JCenter
+
+```
+dependencies {
+    compile 'com.github.zhaokaiqiang.klog:library:0.0.1'
+}
+```
+
 ##License
 
 ```
