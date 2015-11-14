@@ -4,7 +4,7 @@ This is a useful log tool for Android
 
 Android LogCat 工具类，支持行号、所在函数、点击自动跳转、Json格式自定解析打印等功能。
 
-中文文档请戳[这里]()。
+中文文档请戳[这里](http://blog.csdn.net/zhaokaiqiang1992/article/details/49837627)。
 
 ---
 
