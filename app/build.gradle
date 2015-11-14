@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.socks.klog"
+        applicationId "com.socks.sample"
         minSdkVersion 8
         targetSdkVersion 23
         versionCode 1
