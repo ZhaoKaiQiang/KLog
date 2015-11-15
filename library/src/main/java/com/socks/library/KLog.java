@@ -43,7 +43,7 @@ public class KLog {
     }
 
     public static void v(Object msg) {
-        printLog(V, null, msg.toString());
+        printLog(V, null, msg);
     }
 
     public static void v(String tag, String msg) {
@@ -55,11 +55,11 @@ public class KLog {
     }
 
     public static void d(Object msg) {
-        printLog(D, null, msg.toString());
+        printLog(D, null, msg);
     }
 
     public static void d(String tag, Object msg) {
-        printLog(D, tag, msg.toString());
+        printLog(D, tag, msg);
     }
 
     public static void i() {
@@ -67,11 +67,11 @@ public class KLog {
     }
 
     public static void i(Object msg) {
-        printLog(I, null, msg.toString());
+        printLog(I, null, msg);
     }
 
     public static void i(String tag, Object msg) {
-        printLog(I, tag, msg.toString());
+        printLog(I, tag, msg);
     }
 
     public static void w() {
@@ -79,11 +79,11 @@ public class KLog {
     }
 
     public static void w(Object msg) {
-        printLog(W, null, msg.toString());
+        printLog(W, null, msg);
     }
 
     public static void w(String tag, Object msg) {
-        printLog(W, tag, msg.toString());
+        printLog(W, tag, msg);
     }
 
     public static void e() {
@@ -91,11 +91,11 @@ public class KLog {
     }
 
     public static void e(Object msg) {
-        printLog(E, null, msg.toString());
+        printLog(E, null, msg);
     }
 
     public static void e(String tag, Object msg) {
-        printLog(E, tag, msg.toString());
+        printLog(E, tag, msg);
     }
 
     public static void a() {
@@ -103,11 +103,11 @@ public class KLog {
     }
 
     public static void a(Object msg) {
-        printLog(A, null, msg.toString());
+        printLog(A, null, msg);
     }
 
     public static void a(String tag, Object msg) {
-        printLog(A, tag, msg.toString());
+        printLog(A, tag, msg);
     }
 
 
@@ -120,8 +120,8 @@ public class KLog {
     }
 
 
-    private static void printLog(int type, String tagStr, String msg) {
-
+    private static void printLog(int type, String tagStr, Object objectMsg) {
+        String msg;
         if (!IS_SHOW_LOG) {
             return;
         }
@@ -139,6 +139,12 @@ public class KLog {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodName).append(" ] ");
 
+        if (objectMsg == null) {
+            Log.d(tag, "Null Msg Object");
+            return;
+        } else {
+            msg = objectMsg.toString();
+        }
         if (msg != null && type != JSON) {
             stringBuilder.append(msg);
         }
