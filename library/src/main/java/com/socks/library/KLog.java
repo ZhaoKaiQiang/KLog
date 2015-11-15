@@ -140,8 +140,7 @@ public class KLog {
         stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodName).append(" ] ");
 
         if (objectMsg == null) {
-            Log.d(tag, "Null Msg Object");
-            return;
+            msg = "Log with null Object";
         } else {
             msg = objectMsg.toString();
         }

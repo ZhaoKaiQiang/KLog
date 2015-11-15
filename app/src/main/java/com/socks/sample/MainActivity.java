@@ -50,6 +50,15 @@ public class MainActivity extends AppCompatActivity {
         KLog.a(TAG, LOG_MSG);
     }
 
+    public void logWithNull(View view){
+        KLog.v(null);
+        KLog.d(null);
+        KLog.i(null);
+        KLog.w(null);
+        KLog.e(null);
+        KLog.a(null);
+    }
+
     public void logWithJson(View view) {
         KLog.json(JSON);
     }
