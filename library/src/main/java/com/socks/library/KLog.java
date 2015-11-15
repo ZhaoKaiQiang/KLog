@@ -42,8 +42,8 @@ public class KLog {
         printLog(V, null, DEFAULT_MESSAGE);
     }
 
-    public static void v(String msg) {
-        printLog(V, null, msg);
+    public static void v(Object msg) {
+        printLog(V, null, msg.toString());
     }
 
     public static void v(String tag, String msg) {
@@ -54,60 +54,60 @@ public class KLog {
         printLog(D, null, DEFAULT_MESSAGE);
     }
 
-    public static void d(String msg) {
-        printLog(D, null, msg);
+    public static void d(Object msg) {
+        printLog(D, null, msg.toString());
     }
 
-    public static void d(String tag, String msg) {
-        printLog(D, tag, msg);
+    public static void d(String tag, Object msg) {
+        printLog(D, tag, msg.toString());
     }
 
     public static void i() {
         printLog(I, null, DEFAULT_MESSAGE);
     }
 
-    public static void i(String msg) {
-        printLog(I, null, msg);
+    public static void i(Object msg) {
+        printLog(I, null, msg.toString());
     }
 
-    public static void i(String tag, String msg) {
-        printLog(I, tag, msg);
+    public static void i(String tag, Object msg) {
+        printLog(I, tag, msg.toString());
     }
 
     public static void w() {
         printLog(W, null, DEFAULT_MESSAGE);
     }
 
-    public static void w(String msg) {
-        printLog(W, null, msg);
+    public static void w(Object msg) {
+        printLog(W, null, msg.toString());
     }
 
-    public static void w(String tag, String msg) {
-        printLog(W, tag, msg);
+    public static void w(String tag, Object msg) {
+        printLog(W, tag, msg.toString());
     }
 
     public static void e() {
         printLog(E, null, DEFAULT_MESSAGE);
     }
 
-    public static void e(String msg) {
-        printLog(E, null, msg);
+    public static void e(Object msg) {
+        printLog(E, null, msg.toString());
     }
 
-    public static void e(String tag, String msg) {
-        printLog(E, tag, msg);
+    public static void e(String tag, Object msg) {
+        printLog(E, tag, msg.toString());
     }
 
     public static void a() {
         printLog(A, null, DEFAULT_MESSAGE);
     }
 
-    public static void a(String msg) {
-        printLog(A, null, msg);
+    public static void a(Object msg) {
+        printLog(A, null, msg.toString());
     }
 
-    public static void a(String tag, String msg) {
-        printLog(A, tag, msg);
+    public static void a(String tag, Object msg) {
+        printLog(A, tag, msg.toString());
     }
 
 
