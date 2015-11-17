@@ -54,7 +54,7 @@ you can save the log string in to file !
  KLog.file(TAG, Environment.getExternalStorageDirectory(), "test.txt", JSON_LONG);
 ```
 
-![](http://i5.tietuku.com/91a14048978c91c1.png)
+![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/file.png)
 
 ##JCenter
 
