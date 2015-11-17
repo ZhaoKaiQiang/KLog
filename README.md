@@ -48,7 +48,7 @@ as same as above , but with a tag whitch are set by yourself
 
 ###KLog.file()
 
-you can save the log string in to file
+you can save the log string in to file !
 
 ```
  KLog.file(TAG, Environment.getExternalStorageDirectory(), "test.txt", JSON_LONG);
