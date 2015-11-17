@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+
 /**
  * This is a Log tool，with this you can the following
  * <ol>
@@ -17,6 +19,7 @@ import org.json.JSONObject;
  *
  * @author zhaokaiqiang
  *         github https://github.com/ZhaoKaiQiang/KLog
+ *         15/11/17 扩展功能，添加对文件的支持
  */
 public class KLog {
 
@@ -33,6 +36,7 @@ public class KLog {
     private static final int E = 0x5;
     private static final int A = 0x6;
     private static final int JSON = 0x7;
+    private static final int FILE = 0x8;
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -110,7 +114,6 @@ public class KLog {
         printLog(A, tag, msg);
     }
 
-
     public static void json(String jsonFormat) {
         printLog(JSON, null, jsonFormat);
     }
@@ -119,9 +122,20 @@ public class KLog {
         printLog(JSON, tag, jsonFormat);
     }
 
+    public static void file(File targetDirectory, Object msg) {
+        printFile(null, targetDirectory, null, msg);
+    }
+
+    public static void file(String tag, File targetDirectory, Object msg) {
+        printFile(tag, targetDirectory, null, msg);
+    }
+
+    public static void file(String tag, File targetDirectory, String fileName, Object msg) {
+        printFile(tag, targetDirectory, fileName, msg);
+    }
 
     private static void printLog(int type, String tagStr, Object objectMsg) {
-        String msg;
+
         if (!IS_SHOW_LOG) {
             return;
         }
@@ -134,22 +148,41 @@ public class KLog {
         int lineNumber = stackTrace[index].getLineNumber();
 
         String tag = (tagStr == null ? className : tagStr);
-        methodName = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
 
+        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodName).append(" ] ");
+        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
+        String msg = (objectMsg == null) ? "Log with null Object" : objectMsg.toString();
 
-        if (objectMsg == null) {
-            msg = "Log with null Object";
-        } else {
-            msg = objectMsg.toString();
-        }
         if (msg != null && type != JSON) {
             stringBuilder.append(msg);
         }
 
         String logStr = stringBuilder.toString();
 
+        switch (type) {
+            case V:
+            case D:
+            case I:
+            case W:
+            case E:
+            case A:
+                printLog(type, tag, logStr);
+                break;
+            case JSON: {
+                if (TextUtils.isEmpty(msg)) {
+                    Log.e(tag, "Empty or Null json content");
+                    return;
+                }
+                printJson(tag, msg, logStr);
+            }
+            break;
+        }
+
+    }
+
+
+    private static void printLog(int type, String tag, String logStr) {
         switch (type) {
             case V:
                 Log.v(tag, logStr);
@@ -169,41 +202,69 @@ public class KLog {
             case A:
                 Log.wtf(tag, logStr);
                 break;
-            case JSON: {
+        }
+    }
 
-                if (TextUtils.isEmpty(msg)) {
-                    Log.d(tag, "Empty or Null json content");
-                    return;
-                }
+    private static void printJson(String tag, String msg, String logStr) {
 
-                String message = null;
+        String message = null;
 
-                try {
-                    if (msg.startsWith("{")) {
-                        JSONObject jsonObject = new JSONObject(msg);
-                        message = jsonObject.toString(JSON_INDENT);
-                    } else if (msg.startsWith("[")) {
-                        JSONArray jsonArray = new JSONArray(msg);
-                        message = jsonArray.toString(JSON_INDENT);
-                    }
-                } catch (JSONException e) {
-                    e(tag, e.getCause().getMessage() + "\n" + msg);
-                    return;
-                }
-
-                printLine(tag, true);
-                message = logStr + LINE_SEPARATOR + message;
-                String[] lines = message.split(LINE_SEPARATOR);
-                StringBuilder jsonContent = new StringBuilder();
-                for (String line : lines) {
-                    jsonContent.append("║ ").append(line).append(LINE_SEPARATOR);
-                }
-                Log.d(tag, jsonContent.toString());
-                printLine(tag, false);
+        try {
+            if (msg.startsWith("{")) {
+                JSONObject jsonObject = new JSONObject(msg);
+                message = jsonObject.toString(JSON_INDENT);
+            } else if (msg.startsWith("[")) {
+                JSONArray jsonArray = new JSONArray(msg);
+                message = jsonArray.toString(JSON_INDENT);
             }
-            break;
+        } catch (JSONException e) {
+            e(tag, e.getCause().getMessage() + "\n" + msg);
+            return;
         }
 
+        printLine(tag, true);
+        message = logStr + LINE_SEPARATOR + message;
+        String[] lines = message.split(LINE_SEPARATOR);
+        StringBuilder jsonContent = new StringBuilder();
+        for (String line : lines) {
+            jsonContent.append("║ ").append(line).append(LINE_SEPARATOR);
+        }
+        Log.d(tag, jsonContent.toString());
+        printLine(tag, false);
+    }
+
+    private static void printFile(String tag, File targetDirectory, String fileName, Object objectMsg) {
+
+        if (!IS_SHOW_LOG) {
+            return;
+        }
+
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+
+        int index = 4;
+        String className = stackTrace[index].getFileName();
+        String methodName = stackTrace[index].getMethodName();
+        int lineNumber = stackTrace[index].getLineNumber();
+
+        tag = (tag == null ? className : tag);
+
+        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
+        String msg = (objectMsg == null) ? "Log with null Object" : objectMsg.toString();
+
+        String headString = stringBuilder.toString();
+
+        if (msg != null) {
+            msg = headString + msg;
+        }
+
+        fileName = (fileName == null) ? FileHelper.getFileName() : fileName;
+        if (FileHelper.save(targetDirectory, fileName, msg)) {
+            Log.d(tag, headString + " save log success ! location is >>>" + targetDirectory.getAbsolutePath() + "/" + fileName);
+        } else {
+            Log.e(tag, headString + "save log fails !");
+        }
     }
 
     private static void printLine(String tag, boolean isTop) {

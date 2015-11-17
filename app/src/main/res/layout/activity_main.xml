@@ -28,6 +28,13 @@
         android:layout_height="wrap_content"
         android:onClick="logWithJson"
         android:text="Log(JSON)" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="logWithLongJson"
+        android:text="Log(LONG JSON)" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,4 +45,11 @@
         android:layout_height="wrap_content"
         android:onClick="logWithNull"
         android:text="Log(NULL)" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="logWithFile"
+        android:text="Log(File)" />
+
 </LinearLayout>
