@@ -19,20 +19,6 @@ public class XmlLog extends BaseLog{
 
     public static void printXml(String tag, String xml,String headString) {
 
-//        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-//
-//        int index = 4;
-//        String className = stackTrace[index].getFileName();
-//        String methodName = stackTrace[index].getMethodName();
-//        int lineNumber = stackTrace[index].getLineNumber();
-//
-//        tag = (tag == null ? className : tag);
-//
-//        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
-//        StringBuilder stringBuilder = new StringBuilder();
-//        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
-
-
         if (xml != null) {
             xml = XmlLog.formatXML(xml);
             xml = headString + "\n" + xml;
@@ -48,7 +34,6 @@ public class XmlLog extends BaseLog{
             }
         }
         printLine(tag, false);
-
     }
 
     public static String formatXML(String inputXML) {
