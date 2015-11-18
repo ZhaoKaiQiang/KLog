@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logWithJson(View view) {
+        KLog.json("12345");
+        KLog.json(null);
         KLog.json(JSON);
     }
 
@@ -93,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logWithXml(View view) {
+        KLog.xml("12345");
+        KLog.xml(null);
         KLog.xml(XML);
     }
 
@@ -100,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         httpClient.get(this, URL, new TextHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                KLog.d(responseString);
+                KLog.e(responseString);
             }
 
             @Override
@@ -109,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // MENU
+    ///////////////////////////////////////////////////////////////////////////
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

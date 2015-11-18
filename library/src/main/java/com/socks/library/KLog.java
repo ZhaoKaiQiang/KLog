@@ -27,6 +27,7 @@ public class KLog {
 
     private static final String DEFAULT_MESSAGE = "execute";
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
+    private static final String NULL_TIPS = "Log with null object";
     private static final int JSON_INDENT = 4;
 
     private static final int V = 0x1;
@@ -153,19 +154,13 @@ public class KLog {
         String className = stackTrace[index].getFileName();
         String methodName = stackTrace[index].getMethodName();
         int lineNumber = stackTrace[index].getLineNumber();
-
-        String tag = (tagStr == null ? className : tagStr);
-
         String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
-        String msg = (objectMsg == null) ? "Log with null Object" : objectMsg.toString();
 
-        if (msg != null && type != JSON) {
-            stringBuilder.append(msg);
-        }
-
-        String logStr = stringBuilder.toString();
+        String tag = (tagStr == null ? className : tagStr);
+        String msg = (objectMsg == null) ? NULL_TIPS : objectMsg.toString();
+        String headString = stringBuilder.toString();
 
         switch (type) {
             case V:
@@ -174,47 +169,42 @@ public class KLog {
             case W:
             case E:
             case A:
-                printDefault(type, tag, logStr);
+                msg = headString + msg;
+                printDefault(type, tag, msg);
                 break;
-            case JSON: {
-                if (TextUtils.isEmpty(msg)) {
-                    Log.e(tag, "Empty or Null json content");
-                    return;
-                }
-                printJson(tag, msg, logStr);
-            }
-            break;
+            case JSON:
+                printJson(tag, msg, headString);
+                break;
         }
 
     }
 
-
-    private static void printDefault(int type, String tag, String logStr) {
+    private static void printDefault(int type, String tag, String msg) {
         switch (type) {
             case V:
-                Log.v(tag, logStr);
+                Log.v(tag, msg);
                 break;
             case D:
-                Log.d(tag, logStr);
+                Log.d(tag, msg);
                 break;
             case I:
-                Log.i(tag, logStr);
+                Log.i(tag, msg);
                 break;
             case W:
-                Log.w(tag, logStr);
+                Log.w(tag, msg);
                 break;
             case E:
-                Log.e(tag, logStr);
+                Log.e(tag, msg);
                 break;
             case A:
-                Log.wtf(tag, logStr);
+                Log.wtf(tag, msg);
                 break;
         }
     }
 
-    private static void printJson(String tag, String msg, String logStr) {
+    private static void printJson(String tag, String msg, String headString) {
 
-        String message = null;
+        String message;
 
         try {
             if (msg.startsWith("{")) {
@@ -223,6 +213,8 @@ public class KLog {
             } else if (msg.startsWith("[")) {
                 JSONArray jsonArray = new JSONArray(msg);
                 message = jsonArray.toString(JSON_INDENT);
+            } else {
+                message = msg;
             }
         } catch (JSONException e) {
             e(tag, e.getCause().getMessage() + "\n" + msg);
@@ -230,7 +222,7 @@ public class KLog {
         }
 
         printLine(tag, true);
-        message = logStr + LINE_SEPARATOR + message;
+        message = headString + LINE_SEPARATOR + message;
         String[] lines = message.split(LINE_SEPARATOR);
         for (String line : lines) {
             Log.d(tag, "║ " + line);
@@ -256,7 +248,7 @@ public class KLog {
         String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
-        String msg = (objectMsg == null) ? "Log with null Object" : objectMsg.toString();
+        String msg = (objectMsg == null) ? NULL_TIPS : objectMsg.toString();
 
         String headString = stringBuilder.toString();
 
@@ -272,7 +264,7 @@ public class KLog {
         }
     }
 
-    private static void printXml(String tag, String html) {
+    private static void printXml(String tag, String xml) {
 
         if (!IS_SHOW_LOG) {
             return;
@@ -293,13 +285,15 @@ public class KLog {
 
         String headString = stringBuilder.toString();
 
-        if (html != null) {
-            html = XmlHelper.formatXML(html);
-            html = headString + "\n" + html;
+        if (xml != null) {
+            xml = XmlHelper.formatXML(xml);
+            xml = headString + "\n" + xml;
+        } else {
+            xml = headString + NULL_TIPS;
         }
 
         printLine(tag, true);
-        String[] lines = html.split(LINE_SEPARATOR);
+        String[] lines = xml.split(LINE_SEPARATOR);
         for (String line : lines) {
             if (!isEmpty(line)) {
                 Log.d(tag, "║ " + line);

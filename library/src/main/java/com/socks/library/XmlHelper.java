@@ -28,10 +28,8 @@ public class XmlHelper {
             writer.flush();
             requestXML = stringWriter.getBuffer().toString();
         } catch (IOException e) {
-            e.printStackTrace();
             return inputXML;
         } catch (DocumentException e) {
-            e.printStackTrace();
             return inputXML;
         } finally {
             if (writer != null) {
