@@ -18,6 +18,7 @@ import java.io.File;
  * @author zhaokaiqiang
  *         github https://github.com/ZhaoKaiQiang/KLog
  *         15/11/17 扩展功能，添加对文件的支持
+ *         15/11/18 扩展功能，增加对XML的支持，修复BUG
  */
 public class KLog implements Constant {
 
@@ -172,9 +173,9 @@ public class KLog implements Constant {
     }
 
     private static String[] wrapperContent(String tagStr, Object objectMsg) {
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
-        int index = 4;
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+        int index = 5;
         String className = stackTrace[index].getFileName();
         String methodName = stackTrace[index].getMethodName();
         int lineNumber = stackTrace[index].getLineNumber();

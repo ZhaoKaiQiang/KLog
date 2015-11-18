@@ -72,9 +72,16 @@ print xml format string in logcat
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:1.0.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.1.0'
 }
 ```
+##Eclipse
+
+you need add klog.jar into your project ,because the klog dependences on dom4j，so you alse need add the dom4j-2.0.0-RC1.jar to your project . the jar file this in library's libs .
+
+##Notice
+
+if you don't need the method -- KLog.xml() ，you can delete the method about it ,so you can decrease the size of this library.
 
 ##License
 

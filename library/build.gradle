@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-version = "1.0.0"
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -17,7 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions{
+        abortOnError false
+    }
 }
+
+version = "1.1.0"
 def siteUrl = 'https://github.com/ZhaoKaiQiang/KLog'
 def gitUrl = 'https://github.com/ZhaoKaiQiang/KLog.git'
 group = "com.github.zhaokaiqiang.klog"
@@ -66,6 +72,21 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
+
+//create jar
+task clearJar(type: Delete) {
+    delete '../klog.jar'
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/bundles/release/')
+    into('../')
+    include('classes.jar')
+    rename ('classes.jar', 'klog.jar')
+}
+
+makeJar.dependsOn(clearJar, build)
+
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
