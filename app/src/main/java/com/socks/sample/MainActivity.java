@@ -9,20 +9,31 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.TextHttpResponseHandler;
 import com.socks.library.KLog;
 
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_MSG = "KLog is a so cool Log Tool!";
-    private static String JSON;
     private static final String TAG = "KLog";
+    private static final String URL = "http://www.w3school.com.cn/example/xmle/note.xml";
+    private static String XML = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!--  Copyright w3school.com.cn --><note><to>George</to><from>John</from><heading>Reminder</heading><body>Don't forget the meeting!</body></note>";
+    private static String JSON;
     private static String JSON_LONG;
+    private AsyncHttpClient httpClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+
+    private void init() {
+        httpClient = new AsyncHttpClient();
         JSON_LONG = getResources().getString(R.string.json_long);
         JSON = getResources().getString(R.string.json);
     }
@@ -79,6 +90,24 @@ public class MainActivity extends AppCompatActivity {
         KLog.file(Environment.getExternalStorageDirectory(), JSON_LONG);
         KLog.file(TAG, Environment.getExternalStorageDirectory(), JSON_LONG);
         KLog.file(TAG, Environment.getExternalStorageDirectory(), "test.txt", JSON_LONG);
+    }
+
+    public void logWithXml(View view) {
+        KLog.xml(XML);
+    }
+
+    public void logWithXmlFromNet(View view) {
+        httpClient.get(this, URL, new TextHttpResponseHandler() {
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                KLog.d(responseString);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                KLog.xml(responseString);
+            }
+        });
     }
 
     @Override

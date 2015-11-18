@@ -121,6 +121,14 @@ public class KLog {
         printLog(JSON, tag, jsonFormat);
     }
 
+    public static void xml(String xml) {
+        printXml(null, xml);
+    }
+
+    public static void xml(String tag, String xml) {
+        printXml(tag, xml);
+    }
+
     public static void file(File targetDirectory, Object msg) {
         printFile(null, targetDirectory, null, msg);
     }
@@ -264,6 +272,43 @@ public class KLog {
         }
     }
 
+    private static void printXml(String tag, String html) {
+
+        if (!IS_SHOW_LOG) {
+            return;
+        }
+
+        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+
+        int index = 4;
+        String className = stackTrace[index].getFileName();
+        String methodName = stackTrace[index].getMethodName();
+        int lineNumber = stackTrace[index].getLineNumber();
+
+        tag = (tag == null ? className : tag);
+
+        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
+
+        String headString = stringBuilder.toString();
+
+        if (html != null) {
+            html = XmlHelper.formatXML(html);
+            html = headString + "\n" + html;
+        }
+
+        printLine(tag, true);
+        String[] lines = html.split(LINE_SEPARATOR);
+        for (String line : lines) {
+            if (!isEmpty(line)) {
+                Log.d(tag, "║ " + line);
+            }
+        }
+        printLine(tag, false);
+
+    }
+
     private static void printLine(String tag, boolean isTop) {
         if (isTop) {
             Log.d(tag, "╔═══════════════════════════════════════════════════════════════════════════════════════");
@@ -272,4 +317,7 @@ public class KLog {
         }
     }
 
+    private static boolean isEmpty(String line) {
+        return TextUtils.isEmpty(line) || line.equals("\n") || line.equals("\r\n") || line.equals("\t");
+    }
 }

@@ -1,9 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-
 version = "0.2.0"
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -20,11 +18,9 @@ android {
         }
     }
 }
-
 def siteUrl = 'https://github.com/ZhaoKaiQiang/KLog'
 def gitUrl = 'https://github.com/ZhaoKaiQiang/KLog.git'
 group = "com.github.zhaokaiqiang.klog"
-
 install {
     repositories.mavenInstaller {
         pom {
@@ -54,7 +50,6 @@ install {
         }
     }
 }
-
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
@@ -71,10 +66,8 @@ artifacts {
     archives javadocJar
     archives sourcesJar
 }
-
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
@@ -87,4 +80,7 @@ bintray {
         licenses = ["Apache-2.0"]
         publish = true
     }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }

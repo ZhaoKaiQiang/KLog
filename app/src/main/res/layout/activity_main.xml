@@ -9,47 +9,59 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="log"
-        android:text="Log()" />
+        android:text="Log.d()" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="logWithNull"
+        android:text="Log.d(NULL)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithMsg"
-        android:text="Log(String)" />
+        android:text="Log.d(String)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithTag"
-        android:text="Log(TAG,String)" />
+        android:text="Log.d(TAG,String)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithJson"
-        android:text="Log(JSON)" />
+        android:text="Log.json(JSON)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithLongJson"
-        android:text="Log(LONG JSON)" />
+        android:text="Log.json(LONG JSON)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithJsonTag"
-        android:text="Log(TAG,JSON)" />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="logWithNull"
-        android:text="Log(NULL)" />
+        android:text="Log.json(TAG,JSON)" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="logWithFile"
-        android:text="Log(File)" />
+        android:text="Log.file(File)" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="logWithXml"
+        android:text="Log.xml(XML)" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="logWithXmlFromNet"
+        android:text="Log.xml(FROM NET)" />
 
 </LinearLayout>
