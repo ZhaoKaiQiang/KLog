@@ -16,6 +16,11 @@ Android LogCat 工具类，支持行号、所在函数、点击自动跳转、Js
 - Print log info with line number and method name
 - Jump to the position where the log is invoked, by click in the Android Studio Logcat
 
+##Update
+
+- Add support for Long JSON String
+- KLog.file() could save the log to file
+
 ##Sample Usage
 
 ![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/demo.gif)
@@ -60,7 +65,7 @@ you can save the log string in to file !
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:0.1.0'
+    compile 'com.github.zhaokaiqiang.klog:library:0.2.0'
 }
 ```
 
