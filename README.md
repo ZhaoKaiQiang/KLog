@@ -66,6 +66,10 @@ you can save the log string in to file !
 
 print xml format string in logcat
 
+```
+ KLog.xml(XML);
+```
+
 ![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/xml.png)
 
 ##JCenter
