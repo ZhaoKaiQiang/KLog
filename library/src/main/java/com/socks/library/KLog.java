@@ -1,11 +1,9 @@
 package com.socks.library;
 
-import android.text.TextUtils;
-import android.util.Log;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.socks.library.klog.BaseLog;
+import com.socks.library.klog.FileLog;
+import com.socks.library.klog.JsonLog;
+import com.socks.library.klog.XmlLog;
 
 import java.io.File;
 
@@ -21,22 +19,9 @@ import java.io.File;
  *         github https://github.com/ZhaoKaiQiang/KLog
  *         15/11/17 扩展功能，添加对文件的支持
  */
-public class KLog {
+public class KLog implements Constant {
 
     private static boolean IS_SHOW_LOG = true;
-
-    private static final String DEFAULT_MESSAGE = "execute";
-    private static final String LINE_SEPARATOR = System.getProperty("line.separator");
-    private static final String NULL_TIPS = "Log with null object";
-    private static final int JSON_INDENT = 4;
-
-    private static final int V = 0x1;
-    private static final int D = 0x2;
-    private static final int I = 0x3;
-    private static final int W = 0x4;
-    private static final int E = 0x5;
-    private static final int A = 0x6;
-    private static final int JSON = 0x7;
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -123,11 +108,11 @@ public class KLog {
     }
 
     public static void xml(String xml) {
-        printXml(null, xml);
+        printLog(XML, null, xml);
     }
 
     public static void xml(String tag, String xml) {
-        printXml(tag, xml);
+        printLog(XML, tag, xml);
     }
 
     public static void file(File targetDirectory, Object msg) {
@@ -148,6 +133,45 @@ public class KLog {
             return;
         }
 
+        String[] contents = wrapperContent(tagStr, objectMsg);
+        String tag = contents[0];
+        String msg = contents[1];
+        String headString = contents[2];
+
+        switch (type) {
+            case V:
+            case D:
+            case I:
+            case W:
+            case E:
+            case A:
+                BaseLog.printDefault(type, tag, headString + msg);
+                break;
+            case JSON:
+                JsonLog.printJson(tag, msg, headString);
+                break;
+            case XML:
+                XmlLog.printXml(tag, msg, headString);
+                break;
+        }
+    }
+
+
+    private static void printFile(String tagStr, File targetDirectory, String fileName, Object objectMsg) {
+
+        if (!IS_SHOW_LOG) {
+            return;
+        }
+
+        String[] contents = wrapperContent(tagStr, objectMsg);
+        String tag = contents[0];
+        String msg = contents[1];
+        String headString = contents[2];
+
+        FileLog.printFile(tag, targetDirectory, fileName, headString, msg);
+    }
+
+    private static String[] wrapperContent(String tagStr, Object objectMsg) {
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
         int index = 4;
@@ -162,156 +186,7 @@ public class KLog {
         String msg = (objectMsg == null) ? NULL_TIPS : objectMsg.toString();
         String headString = stringBuilder.toString();
 
-        switch (type) {
-            case V:
-            case D:
-            case I:
-            case W:
-            case E:
-            case A:
-                msg = headString + msg;
-                printDefault(type, tag, msg);
-                break;
-            case JSON:
-                printJson(tag, msg, headString);
-                break;
-        }
-
+        return new String[]{tag, msg, headString};
     }
 
-    private static void printDefault(int type, String tag, String msg) {
-        switch (type) {
-            case V:
-                Log.v(tag, msg);
-                break;
-            case D:
-                Log.d(tag, msg);
-                break;
-            case I:
-                Log.i(tag, msg);
-                break;
-            case W:
-                Log.w(tag, msg);
-                break;
-            case E:
-                Log.e(tag, msg);
-                break;
-            case A:
-                Log.wtf(tag, msg);
-                break;
-        }
-    }
-
-    private static void printJson(String tag, String msg, String headString) {
-
-        String message;
-
-        try {
-            if (msg.startsWith("{")) {
-                JSONObject jsonObject = new JSONObject(msg);
-                message = jsonObject.toString(JSON_INDENT);
-            } else if (msg.startsWith("[")) {
-                JSONArray jsonArray = new JSONArray(msg);
-                message = jsonArray.toString(JSON_INDENT);
-            } else {
-                message = msg;
-            }
-        } catch (JSONException e) {
-            e(tag, e.getCause().getMessage() + "\n" + msg);
-            return;
-        }
-
-        printLine(tag, true);
-        message = headString + LINE_SEPARATOR + message;
-        String[] lines = message.split(LINE_SEPARATOR);
-        for (String line : lines) {
-            Log.d(tag, "║ " + line);
-        }
-        printLine(tag, false);
-    }
-
-    private static void printFile(String tag, File targetDirectory, String fileName, Object objectMsg) {
-
-        if (!IS_SHOW_LOG) {
-            return;
-        }
-
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-
-        int index = 4;
-        String className = stackTrace[index].getFileName();
-        String methodName = stackTrace[index].getMethodName();
-        int lineNumber = stackTrace[index].getLineNumber();
-
-        tag = (tag == null ? className : tag);
-
-        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
-        String msg = (objectMsg == null) ? NULL_TIPS : objectMsg.toString();
-
-        String headString = stringBuilder.toString();
-
-        if (msg != null) {
-            msg = headString + msg;
-        }
-
-        fileName = (fileName == null) ? FileHelper.getFileName() : fileName;
-        if (FileHelper.save(targetDirectory, fileName, msg)) {
-            Log.d(tag, headString + " save log success ! location is >>>" + targetDirectory.getAbsolutePath() + "/" + fileName);
-        } else {
-            Log.e(tag, headString + "save log fails !");
-        }
-    }
-
-    private static void printXml(String tag, String xml) {
-
-        if (!IS_SHOW_LOG) {
-            return;
-        }
-
-        StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-
-        int index = 4;
-        String className = stackTrace[index].getFileName();
-        String methodName = stackTrace[index].getMethodName();
-        int lineNumber = stackTrace[index].getLineNumber();
-
-        tag = (tag == null ? className : tag);
-
-        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
-
-        String headString = stringBuilder.toString();
-
-        if (xml != null) {
-            xml = XmlHelper.formatXML(xml);
-            xml = headString + "\n" + xml;
-        } else {
-            xml = headString + NULL_TIPS;
-        }
-
-        printLine(tag, true);
-        String[] lines = xml.split(LINE_SEPARATOR);
-        for (String line : lines) {
-            if (!isEmpty(line)) {
-                Log.d(tag, "║ " + line);
-            }
-        }
-        printLine(tag, false);
-
-    }
-
-    private static void printLine(String tag, boolean isTop) {
-        if (isTop) {
-            Log.d(tag, "╔═══════════════════════════════════════════════════════════════════════════════════════");
-        } else {
-            Log.d(tag, "╚═══════════════════════════════════════════════════════════════════════════════════════");
-        }
-    }
-
-    private static boolean isEmpty(String line) {
-        return TextUtils.isEmpty(line) || line.equals("\n") || line.equals("\t")||TextUtils.isEmpty(line.trim());
-    }
 }

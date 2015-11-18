@@ -1,4 +1,6 @@
-package com.socks.library;
+package com.socks.library.klog;
+
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,11 +12,21 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 /**
- * Created by zhaokaiqiang on 15/11/17.
+ * Created by zhaokaiqiang on 15/11/18.
  */
-public class FileHelper {
+public class FileLog extends BaseLog {
 
-    public static boolean save(File dic, String fileName, String msg) {
+    public static void printFile(String tag, File targetDirectory, String fileName, String headString, String msg) {
+
+        fileName = (fileName == null) ? getFileName() : fileName;
+        if (save(targetDirectory, fileName, msg)) {
+            Log.d(tag, headString + " save log success ! location is >>>" + targetDirectory.getAbsolutePath() + "/" + fileName);
+        } else {
+            Log.e(tag, headString + "save log fails !");
+        }
+    }
+
+    private static boolean save(File dic, String fileName, String msg) {
 
         File file = new File(dic, fileName);
 
@@ -38,10 +50,10 @@ public class FileHelper {
         return true;
     }
 
-    public static String getFileName() {
+    private static String getFileName() {
         Random random = new Random();
         StringBuilder stringBuilder = new StringBuilder("KLog_");
-        stringBuilder.append(Long.toString(System.currentTimeMillis()+random.nextInt(10000)).substring(4));
+        stringBuilder.append(Long.toString(System.currentTimeMillis() + random.nextInt(10000)).substring(4));
         stringBuilder.append(".txt");
         return stringBuilder.toString();
     }
