@@ -36,7 +36,6 @@ public class KLog {
     private static final int E = 0x5;
     private static final int A = 0x6;
     private static final int JSON = 0x7;
-    private static final int FILE = 0x8;
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -167,7 +166,7 @@ public class KLog {
             case W:
             case E:
             case A:
-                printLog(type, tag, logStr);
+                printDefault(type, tag, logStr);
                 break;
             case JSON: {
                 if (TextUtils.isEmpty(msg)) {
@@ -182,7 +181,7 @@ public class KLog {
     }
 
 
-    private static void printLog(int type, String tag, String logStr) {
+    private static void printDefault(int type, String tag, String logStr) {
         switch (type) {
             case V:
                 Log.v(tag, logStr);
@@ -225,11 +224,9 @@ public class KLog {
         printLine(tag, true);
         message = logStr + LINE_SEPARATOR + message;
         String[] lines = message.split(LINE_SEPARATOR);
-        StringBuilder jsonContent = new StringBuilder();
         for (String line : lines) {
-            jsonContent.append("║ ").append(line).append(LINE_SEPARATOR);
+            Log.d(tag, "║ " + line);
         }
-        Log.d(tag, jsonContent.toString());
         printLine(tag, false);
     }
 
