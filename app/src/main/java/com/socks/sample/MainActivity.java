@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String LOG_MSG = "KLog is a so cool Log Tool!";
     private static final String TAG = "KLog";
-    private static final String URL = "http://www.w3school.com.cn/example/xmle/note.xml";
+    private static final String URL_XML = "https://raw.githubusercontent.com/ZhaoKaiQiang/KLog/master/app/src/main/AndroidManifest.xml";
     private static String XML = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!--  Copyright w3school.com.cn --><note><to>George</to><from>John</from><heading>Reminder</heading><body>Don't forget the meeting!</body></note>";
     private static String JSON;
     private static String JSON_LONG;
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logWithXmlFromNet(View view) {
-        httpClient.get(this, URL, new TextHttpResponseHandler() {
+        httpClient.get(this, URL_XML, new TextHttpResponseHandler() {
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
                 KLog.e(responseString);

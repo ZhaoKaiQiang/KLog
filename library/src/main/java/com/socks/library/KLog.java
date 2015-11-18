@@ -312,6 +312,6 @@ public class KLog {
     }
 
     private static boolean isEmpty(String line) {
-        return TextUtils.isEmpty(line) || line.equals("\n") || line.equals("\r\n") || line.equals("\t");
+        return TextUtils.isEmpty(line) || line.equals("\n") || line.equals("\t")||TextUtils.isEmpty(line.trim());
     }
 }
