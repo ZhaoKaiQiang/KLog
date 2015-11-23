@@ -81,11 +81,11 @@ dependencies {
 ```
 ##Eclipse
 
-you need add klog.jar into your project ,because the klog dependences on dom4j，so you alse need add the dom4j-2.0.0-RC1.jar to your project . the jar file this in library's libs .
+You need add klog.jar into your project ,because the klog dependences on dom4j，so you alse need add the dom4j-2.0.0-RC1.jar to your project . The jar file is in the library's libs .
 
 ##Notice
 
-if you don't need the method -- KLog.xml() ，you can delete the method about it ,so you can decrease the size of this library.
+If you don't need the method -- KLog.xml() ，you can delete the method about it ,so that you can decrease the almost size of this library.
 
 ##License
 
