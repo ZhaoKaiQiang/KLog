@@ -19,10 +19,13 @@ import java.io.File;
  *         github https://github.com/ZhaoKaiQiang/KLog
  *         15/11/17 扩展功能，添加对文件的支持
  *         15/11/18 扩展功能，增加对XML的支持，修复BUG
+ *         15/12/8  扩展功能，添加对任意参数的支持
  */
 public class KLog implements Constant {
 
     private static boolean IS_SHOW_LOG = true;
+    private static final String PARAM = "Param";
+    private static final String NULL = "null";
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -36,8 +39,8 @@ public class KLog implements Constant {
         printLog(V, null, msg);
     }
 
-    public static void v(String tag, String msg, Object... args) {
-        printLog(V, tag, msg, args);
+    public static void v(String tag, Object... objects) {
+        printLog(V, tag, objects);
     }
 
     public static void d() {
@@ -48,8 +51,8 @@ public class KLog implements Constant {
         printLog(D, null, msg);
     }
 
-    public static void d(String tag, Object msg, Object... args) {
-        printLog(D, tag, msg, args);
+    public static void d(String tag, Object... objects) {
+        printLog(D, tag, objects);
     }
 
     public static void i() {
@@ -60,8 +63,8 @@ public class KLog implements Constant {
         printLog(I, null, msg);
     }
 
-    public static void i(String tag, Object msg, Object... args) {
-        printLog(I, tag, msg, args);
+    public static void i(String tag, Object... objects) {
+        printLog(I, tag, objects);
     }
 
     public static void w() {
@@ -72,8 +75,8 @@ public class KLog implements Constant {
         printLog(W, null, msg);
     }
 
-    public static void w(String tag, Object msg, Object... args) {
-        printLog(W, tag, msg, args);
+    public static void w(String tag, Object... objects) {
+        printLog(W, tag, objects);
     }
 
     public static void e() {
@@ -84,8 +87,8 @@ public class KLog implements Constant {
         printLog(E, null, msg);
     }
 
-    public static void e(String tag, Object msg, Object... args) {
-        printLog(E, tag, msg, args);
+    public static void e(String tag, Object... objects) {
+        printLog(E, tag, objects);
     }
 
     public static void a() {
@@ -96,8 +99,8 @@ public class KLog implements Constant {
         printLog(A, null, msg);
     }
 
-    public static void a(String tag, Object msg, Object... args) {
-        printLog(A, tag, msg, args);
+    public static void a(String tag, Object... objects) {
+        printLog(A, tag, objects);
     }
 
     public static void json(String jsonFormat) {
@@ -128,17 +131,13 @@ public class KLog implements Constant {
         printFile(tag, targetDirectory, fileName, msg);
     }
 
-    private static void printLog(int type, String tagStr, Object objectMsg, Object... args) {
+    private static void printLog(int type, String tagStr, Object... objects) {
 
         if (!IS_SHOW_LOG) {
             return;
         }
 
-        if (args.length > 0 && objectMsg != null) {
-            objectMsg = String.format((String)objectMsg, args);
-        }
-
-        String[] contents = wrapperContent(tagStr, objectMsg);
+        String[] contents = wrapperContent(tagStr, objects);
         String tag = contents[0];
         String msg = contents[1];
         String headString = contents[2];
@@ -176,7 +175,7 @@ public class KLog implements Constant {
         FileLog.printFile(tag, targetDirectory, fileName, headString, msg);
     }
 
-    private static String[] wrapperContent(String tagStr, Object objectMsg) {
+    private static String[] wrapperContent(String tagStr, Object... objects) {
 
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         int index = 5;
@@ -188,10 +187,30 @@ public class KLog implements Constant {
         stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
 
         String tag = (tagStr == null ? className : tagStr);
-        String msg = (objectMsg == null) ? NULL_TIPS : objectMsg.toString();
+        String msg = (objects == null) ? NULL_TIPS : getObjectsString(objects);
         String headString = stringBuilder.toString();
 
         return new String[]{tag, msg, headString};
+    }
+
+    private static String getObjectsString(Object... objects) {
+
+        if (objects.length > 1) {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("\n");
+            for (int i = 0; i < objects.length; i++) {
+                Object object = objects[i];
+                if (object == null) {
+                    stringBuilder.append(PARAM).append("[").append(i).append("]").append(" = ").append(NULL).append("\n");
+                } else {
+                    stringBuilder.append(PARAM).append("[").append(i).append("]").append(" = ").append(object.toString()).append("\n");
+                }
+            }
+            return stringBuilder.toString();
+        } else {
+            Object object = objects[0];
+            return object == null ? NULL : object.toString();
+        }
     }
 
 }

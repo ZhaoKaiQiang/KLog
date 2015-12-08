@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "com.socks.sample"
+        applicationId "com.socks.klog.sample"
         minSdkVersion 8
         targetSdkVersion 23
         versionCode 1
@@ -31,6 +31,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'cz.msebera.android:httpclient:4.3.6'
-    compile 'com.github.zhaokaiqiang.klog:library:1.1.0'
-//    compile project(':library')
+//    compile 'com.github.zhaokaiqiang.klog:library:1.1.0'
+    compile project(':library')
 }

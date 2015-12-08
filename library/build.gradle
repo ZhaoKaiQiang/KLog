@@ -103,5 +103,5 @@ bintray {
     }
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'dom4j:dom4j:20040902.021138'
 }

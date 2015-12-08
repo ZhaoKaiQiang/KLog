@@ -65,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
         KLog.a(TAG, LOG_MSG);
     }
 
+    public void logWithParams(View view) {
+        KLog.v(TAG, LOG_MSG, "params1", "params2", this);
+        KLog.d(TAG, LOG_MSG, "params1", "params2", this);
+        KLog.i(TAG, LOG_MSG, "params1", "params2", this);
+        KLog.w(TAG, LOG_MSG, "params1", "params2", this);
+        KLog.e(TAG, LOG_MSG, "params1", "params2", this);
+        KLog.a(TAG, LOG_MSG, "params1", "params2", this);
+    }
+
     public void logWithNull(View view) {
         KLog.v(null);
         KLog.d(null);
