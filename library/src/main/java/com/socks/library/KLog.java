@@ -36,8 +36,8 @@ public class KLog implements Constant {
         printLog(V, null, msg);
     }
 
-    public static void v(String tag, String msg) {
-        printLog(V, tag, msg);
+    public static void v(String tag, String msg, Object... args) {
+        printLog(V, tag, msg, args);
     }
 
     public static void d() {
@@ -48,8 +48,8 @@ public class KLog implements Constant {
         printLog(D, null, msg);
     }
 
-    public static void d(String tag, Object msg) {
-        printLog(D, tag, msg);
+    public static void d(String tag, Object msg, Object... args) {
+        printLog(D, tag, msg, args);
     }
 
     public static void i() {
@@ -60,8 +60,8 @@ public class KLog implements Constant {
         printLog(I, null, msg);
     }
 
-    public static void i(String tag, Object msg) {
-        printLog(I, tag, msg);
+    public static void i(String tag, Object msg, Object... args) {
+        printLog(I, tag, msg, args);
     }
 
     public static void w() {
@@ -72,8 +72,8 @@ public class KLog implements Constant {
         printLog(W, null, msg);
     }
 
-    public static void w(String tag, Object msg) {
-        printLog(W, tag, msg);
+    public static void w(String tag, Object msg, Object... args) {
+        printLog(W, tag, msg, args);
     }
 
     public static void e() {
@@ -84,8 +84,8 @@ public class KLog implements Constant {
         printLog(E, null, msg);
     }
 
-    public static void e(String tag, Object msg) {
-        printLog(E, tag, msg);
+    public static void e(String tag, Object msg, Object... args) {
+        printLog(E, tag, msg, args);
     }
 
     public static void a() {
@@ -96,8 +96,8 @@ public class KLog implements Constant {
         printLog(A, null, msg);
     }
 
-    public static void a(String tag, Object msg) {
-        printLog(A, tag, msg);
+    public static void a(String tag, Object msg, Object... args) {
+        printLog(A, tag, msg, args);
     }
 
     public static void json(String jsonFormat) {
@@ -128,10 +128,14 @@ public class KLog implements Constant {
         printFile(tag, targetDirectory, fileName, msg);
     }
 
-    private static void printLog(int type, String tagStr, Object objectMsg) {
+    private static void printLog(int type, String tagStr, Object objectMsg, Object... args) {
 
         if (!IS_SHOW_LOG) {
             return;
+        }
+
+        if (args.length > 0 && objectMsg != null) {
+            objectMsg = String.format((String)objectMsg, args);
         }
 
         String[] contents = wrapperContent(tagStr, objectMsg);
