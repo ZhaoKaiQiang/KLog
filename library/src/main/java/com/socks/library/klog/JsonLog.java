@@ -2,6 +2,9 @@ package com.socks.library.klog;
 
 import android.util.Log;
 
+import com.socks.library.KLog;
+import com.socks.library.Util;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,7 +12,7 @@ import org.json.JSONObject;
 /**
  * Created by zhaokaiqiang on 15/11/18.
  */
-public class JsonLog extends BaseLog {
+public class JsonLog {
 
     public static void printJson(String tag, String msg, String headString) {
 
@@ -18,10 +21,10 @@ public class JsonLog extends BaseLog {
         try {
             if (msg.startsWith("{")) {
                 JSONObject jsonObject = new JSONObject(msg);
-                message = jsonObject.toString(JSON_INDENT);
+                message = jsonObject.toString(KLog.JSON_INDENT);
             } else if (msg.startsWith("[")) {
                 JSONArray jsonArray = new JSONArray(msg);
-                message = jsonArray.toString(JSON_INDENT);
+                message = jsonArray.toString(KLog.JSON_INDENT);
             } else {
                 message = msg;
             }
@@ -29,12 +32,12 @@ public class JsonLog extends BaseLog {
             message = msg;
         }
 
-        printLine(tag, true);
-        message = headString + LINE_SEPARATOR + message;
-        String[] lines = message.split(LINE_SEPARATOR);
+        Util.printLine(tag, true);
+        message = headString + KLog.LINE_SEPARATOR + message;
+        String[] lines = message.split(KLog.LINE_SEPARATOR);
         for (String line : lines) {
             Log.d(tag, "║ " + line);
         }
-        printLine(tag, false);
+        Util.printLine(tag, false);
     }
 }

@@ -22,11 +22,26 @@ import java.io.File;
  *         15/12/8  扩展功能，添加对任意参数的支持
  *         15/12/11 扩展功能，增加对无限长字符串支持
  */
-public class KLog implements Constant {
+public class KLog {
+
+    public static final String DEFAULT_MESSAGE = "execute";
+    public static final String LINE_SEPARATOR = System.getProperty("line.separator");
+    public static final String NULL_TIPS = "Log with null object";
+    public static final String PARAM = "Param";
+    public static final String NULL = "null";
+
+    public static final int JSON_INDENT = 4;
+
+    public static final int V = 0x1;
+    public static final int D = 0x2;
+    public static final int I = 0x3;
+    public static final int W = 0x4;
+    public static final int E = 0x5;
+    public static final int A = 0x6;
+    public static final int JSON = 0x7;
+    public static final int XML = 0x8;
 
     private static boolean IS_SHOW_LOG = true;
-    private static final String PARAM = "Param";
-    private static final String NULL = "null";
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;

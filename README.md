@@ -87,7 +87,7 @@ print xml format string in logcat
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:1.2.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.3.0'
 }
 ```
 ##Eclipse

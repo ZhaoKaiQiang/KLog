@@ -2,6 +2,9 @@ package com.socks.library.klog;
 
 import android.util.Log;
 
+import com.socks.library.KLog;
+import com.socks.library.Util;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.io.OutputFormat;
@@ -15,7 +18,7 @@ import java.io.StringWriter;
 /**
  * Created by zhaokaiqiang on 15/11/18.
  */
-public class XmlLog extends BaseLog{
+public class XmlLog{
 
     public static void printXml(String tag, String xml,String headString) {
 
@@ -23,17 +26,17 @@ public class XmlLog extends BaseLog{
             xml = XmlLog.formatXML(xml);
             xml = headString + "\n" + xml;
         } else {
-            xml = headString + NULL_TIPS;
+            xml = headString + KLog.NULL_TIPS;
         }
 
-        printLine(tag, true);
-        String[] lines = xml.split(LINE_SEPARATOR);
+        Util.printLine(tag, true);
+        String[] lines = xml.split(KLog.LINE_SEPARATOR);
         for (String line : lines) {
-            if (!isEmpty(line)) {
+            if (!Util.isEmpty(line)) {
                 Log.d(tag, "║ " + line);
             }
         }
-        printLine(tag, false);
+        Util.printLine(tag, false);
     }
 
     public static String formatXML(String inputXML) {
