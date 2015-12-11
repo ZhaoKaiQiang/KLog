@@ -4,7 +4,17 @@
 
 This is a useful log tool for Android 
 
-Android LogCat 工具类，支持行号、所在函数、点击自动跳转、Json格式自动解析打印、xml格式自定解析打印，存储Log到文件等功能。
+Android LogCat 工具类，目前功能：
+
+- 无参数打印
+- 打印所在行号
+- 打印所在函数
+- AS点击方法名自动跳转
+- Json格式自动解析打印
+- xml格式自定解析打印
+- Log信息存储到文件(6.0以上需要动态申请存储空间权限)
+- 变长参数打印
+- 无logcat最多4000字符打印限制
 
 中文文档请戳[这里](http://blog.csdn.net/zhaokaiqiang1992/article/details/49837627)。
 
@@ -21,6 +31,7 @@ Android LogCat 工具类，支持行号、所在函数、点击自动跳转、Js
 - Add support for Long JSON String
 - KLog.file() could save the log to file
 - Add support for xml format string
+- Add support for long string
 
 ##Sample Usage
 
@@ -76,7 +87,7 @@ print xml format string in logcat
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:1.1.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.2.0'
 }
 ```
 ##Eclipse
