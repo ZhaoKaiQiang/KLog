@@ -2,4 +2,521 @@
     <string name="app_name">KLog</string>
     <string name="json_long">"{\"Consume\":{\"Moneys\":{\"totalMoney\":\"0.01\"},\"record\":[{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:49:18.063+08:00\",\"GiveEgg\":\"0\",\"ID\":\"714833524\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:46:12.813+08:00\",\"GiveEgg\":\"0\",\"ID\":\"1350320533\",\"OrderState\":\"3\",\"OrderStateName\":\"处理中\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"7\",\"PayWayID\":\"2\",\"PayWayName\":\"XXX邮政储蓄所\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"18\",\"CreateTime\":\"2008-09-05T08:40:55.703+08:00\",\"GiveEgg\":\"0\",\"ID\":\"1413965649\",\"OrderState\":\"1\",\"OrderStateName\":\"成功\",\"OrderType\":\"4\",\"OrderTypeName\":\"同步交易订单\",\"PayID\":\"2\",\"PayWayID\":\"1\",\"PayWayName\":\"财付通在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"同步课程\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:39:29.127+08:00\",\"GiveEgg\":\"0\",\"ID\":\"83430389\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:38:33.28+08:00\",\"GiveEgg\":\"0\",\"ID\":\"1206699325\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"},{\"AppID\":\"11\",\"CreateTime\":\"2008-09-05T08:31:54.453+08:00\",\"GiveEgg\":\"0\",\"ID\":\"795858378\",\"OrderState\":\"2\",\"OrderStateName\":\"失败\",\"OrderType\":\"3\",\"OrderTypeName\":\"实物交易订单\",\"PayID\":\"3\",\"PayWayID\":\"1\",\"PayWayName\":\"快钱在线支付\",\"TotalMoney\":\"0.01\",\"TotalNumber\":\"0\",\"TradeSource\":\"商城购物\",\"UserID\":\"668288112\"}],\"results\":{\"totalRecords\":\"6\"}}}"</string>
     <string name="json">"{\"menu\":[\"泰式柠檬肉片\",\"鸡柳汉堡\",\"蒸桂鱼卷 \"],\"tag\":\"其他\"}"</string>
+    <string name="string_long">    转载请注明出处：http://blog.csdn.net/zhaokaiqiang1992
+    话接上文，在前一篇文章里面，咱们一起分析了“知乎”的回答详情页的需求，然后顺便用代码实现了下，忘了的可以再去看看【凯子哥带你夯实应用层】都说“知乎”逼格高，我们来实现“知乎”回答详情页动画效果 。其实在很多的界面效果中，这种“滚动”的效果能带来很多的惊喜，各种效果也很有搞头，说不定什么时候，Boss看着哪个界面好看，就让你去仿个过来，你要是说不会，那你下个月的工资还想发不！所以呢，今天这篇文章，就结合着一些案例，来稍微系统的总结一下Android系统中，如果要实现界面滚动，所涉及到的几个常用类。
+    Scroller和OverScroller，这两个是AndroidUI框架下实现滚动效果的最关键的类，ScrollView内部的实现也是使用的OverScroller，所以熟练的使用这两个类的相关API，可以让我们满足大部分的开发需求。
+    在View类里面，有两个和滚动相关的类，scrollTo()和scrollBy。这两个方法可以实现View内容的移动，注意，是内容，不是位置！是移动，不是滚动！什么叫做内容呢？比如说一个TextView，如果使用scrollTo()，那么移动的是里面的文字，而不是位置，scrollBy()也是一样的。那么为什么是移动，不是滚动呢？这是因为这两个方法完成的都是瞬间完成，即瞬移，而不是带有滚动过程的滚动，所以说，如果要实现效果比较好的滚动，光靠View自带的方法还是不行滴，还是要Scrollers出马~
+    但是！Scrollers并不是控制View进行滚动，包括内容或者是位置，实际上，Scrollers只是一个控件移动轨迹的辅助计算类，如果你想滚，他能帮你计算什么时间应该滚到什么位置，但是滚不滚，全靠你自觉~所以说，滚动位置由Scrollers计算出来了，我们在什么时候滚呢？滚多少呢？这时候，就要View的一个回调函数computeScroll()出马了。
+    我们看看View里面的computeScroll()做了些什么
+/**
+     * Called by a parent to request that a child update its values for mScrollX
+     * and mScrollY if necessary. This will typically be done if the child is
+     * animating a scroll using a {@link android.widget.Scroller Scroller}
+     * object.
+     */
+    public void computeScroll() {
+    }
+
+    duang！空的！不过没事，看看注释，就是说，如果我们用Scroller实现一个滚动动画的时候，这个方法就会被调用，被谁调用呢？parent，谁改变呢？child。所以一般来说，这个方法可以用来更新mScrollX和mScrollY，但是其实不光可以改变这些，我们还能做其他事情。
+    如果我们调用Scroller.startScroll(int startX, int startY, int dx, int dy)，那么我们就可以在computeScroll()里面执行实际的操作了，就像下面这样
+@Override
+    public void computeScroll() {
+
+        // 先判断mScroller滚动是否完成
+        if (mScroller.computeScrollOffset()) {
+            // 这里调用View的scrollTo()完成实际的滚动
+            scrollTo( mScroller.getCurrX(), mScroller .getCurrY());
+            // 必须调用该方法，否则不一定能看到滚动效果
+            invalidate();
+        }
+        super.computeScroll();
+    }
+
+    Scroller.computeScrollOffset方法是来判断滚动过程是否完成的,如果没有完成，就需要不停的scrollTo下去，所以在最后需要加一个invalidate(),这样可以再次触发computScroll,直到滚动已经结束。
+
+    其实说到这里，有的同学可能比较迷惑，OverScroller和Scroller有什么区别呢？事实上，这两个类都属于Scrollers，Scroller出现的比较早，在API1就有了，OverScroller是在API9才添加上的，出现的比较晚，所以功能比较完善，Over的意思就是超出，即OverScroller提供了对超出滑动边界的情况的处理，这两个类80%的API是一致的，OverScroller比Scroller添加了一下几个方法
+    ☞ isOverScrolled()
+    ☞ springBack(int startX, int startY, int minX, int maxX, int minY, int maxY)
+    ☞ fling(int startX, int startY, int velocityX, int velocityY, int minX, int maxX, int minY, int maxY, int overX, int overY)
+    ☞ notifyHorizontalEdgeReached(int startX, int finalX, int overX)
+    ☞ notifyVerticalEdgeReached(int startY, int finalY, int overY)
+    从名字也能看出来，都是对Over功能的支持，其他的API都一样，所以介绍通用API的时候，并不区分OverScroller和Scroller。
+
+    下面简单介绍一下常用的API。
+    ☞ computeScrollOffset() 这个就是来判断当前的滑动动作是否完成的，用法很单一，就是在computeScroll()里面来做判断滚动是否完成
+    ☞ getCurrX() 这个就是获取当前滑动的坐标值，因为Scrollers只是一个辅助计算类，所以如果我们想获取滑动时的时时坐标，就可以通过这个方法获得，然后在computeScroll()里面调用
+    ☞ getFinalX() 这个是用来获取最终滑动停止时的坐标
+    ☞ isFinished() 用来判断当前滚动是否结束
+    ☞ startScroll(int startX, int startY, int dx, int dy) 用来开始滚动，这个是很重要的一个触发computeScroll()的方法，调用这个方法之后，我们就可以在computeScroll里面获取滚动的信息，然后完成我们的需要。这个还有一个带有滚动持续时间的重载函数，可以根据需求自由使用。特别要注意这四个参数，startX和startY是开始的坐标位置，正数左上，负数右下，dx、dy同理，当在computeScroll()获取getCurrX()的时候，变化范围就与这里地设置有关。
+ /**
+     * Start scrolling by providing a starting point and the distance to travel.
+     * The scroll will use the default value of 250 milliseconds for the
+     * duration.
+     *
+     * @param startX Starting horizontal scroll offset in pixels. Positive
+     *        numbers will scroll the content to the left.
+     * @param startY Starting vertical scroll offset in pixels. Positive numbers
+     *        will scroll the content up.
+     * @param dx Horizontal distance to travel. Positive numbers will scroll the
+     *        content to the left.
+     * @param dy Vertical distance to travel. Positive numbers will scroll the
+     *        content up.
+     */
+    public void startScroll(int startX, int startY, int dx, int dy) {
+        startScroll(startX, startY, dx, dy, DEFAULT_DURATION);
+    }
+    ☞ fling(int startX, int startY, int velocityX, int velocityY, int minX, int maxX, int minY, int maxY) 这个方法也很重要，如果你想实现滑动之后，布局能够根据移动速度，慢慢减速的话，就需要用这个来实现，这里需要加速度的参数，我们可以通过VelocityTracker这个类来获取，然后使用，具体参数函数，在下面的实例中进行说明。
+
+    说了这么多东西，都是最基础的，也是最没意思的，下面通过几个小例子，我们来简单地使用以下这些API，加深理解。
+    因为gif帧率太低，不能很好地展示效果，所以我录取了一个视频，请大家戳这里(演示视频)查看演示视频，选择720P高清播放。
+    顺便贴一下代码，在后面对代码进行解读。
+public void click(View view) {
+
+		switch (view.getId()) {
+			case R.id.btn_scroll_to:
+				textView.scrollTo(distance, 0);
+				distance += 10;
+				break;
+			case R.id.btn_scroll_by:
+				textView.scrollBy(30, 0);
+				break;
+			case R.id.btn_sping_back:
+				//不知道为什么第一次调用会贴墙，即到达x=0的位置
+				textView.spingBack();
+				break;
+		}
+
+	}
+
+    首先点击了scrollBy()三次，这个函数是相对坐标移动，与当前坐标无关，而scrollTo()则是绝对坐标移动，如果distance相同的话，第二次就不会移动了，其实scrollBy()在源码上也是scrollTo()
+    /**
+     * Move the scrolled position of your view. This will cause a call to
+     * {@link #onScrollChanged(int, int, int, int)} and the view will be
+     * invalidated.
+     * @param x the amount of pixels to scroll by horizontally
+     * @param y the amount of pixels to scroll by vertically
+     */
+    public void scrollBy(int x, int y) {
+        scrollTo(mScrollX + x, mScrollY + y);
+    }
+
+    这样就明白为什么3次scrollBy()之后，调用scrollTo()之后，内容会移动回来了，以为前面的移动是30*3=90，而scrollTo()第一次调用distance是30，所以坐标就回来了，视觉上就是后退回来。
+    第三个拖拽回弹效果用的是一个自定义控件，下面我们会详细的分析实现。
+    第四个效果是spingBack()，即OverScroller的回弹效果，我们顺便也介绍了。
+    OK，咱们开始介绍这个可以回弹的自定义TextView是如何实现这种效果的。
+    下面是实现的代码
+/**
+ * Created by zhaokaiqiang on 15/2/28.
+ */
+public class JellyTextView extends TextView {
+
+	private OverScroller mScroller;
+
+	private float lastX;
+	private float lastY;
+
+	private float startX;
+	private float startY;
+
+	public JellyTextView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		mScroller = new OverScroller(context, new BounceInterpolator());
+	}
+
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		switch (event.getAction()) {
+			case MotionEvent.ACTION_DOWN:
+				lastX = event.getRawX();
+				lastY = event.getRawY();
+				break;
+			case MotionEvent.ACTION_MOVE:
+				float disX = event.getRawX() - lastX;
+				float disY = event.getRawY() - lastY;
+
+				offsetLeftAndRight((int) disX);
+				offsetTopAndBottom((int) disY);
+				lastX = event.getRawX();
+				lastY = event.getRawY();
+				break;
+			case MotionEvent.ACTION_UP:
+				mScroller.startScroll((int) getX(), (int) getY(), -(int) (getX() - startX),
+						-(int) (getY() - startY));
+				invalidate();
+				break;
+		}
+
+		return super.onTouchEvent(event);
+	}
+
+
+	@Override
+	public void computeScroll() {
+
+		if (mScroller.computeScrollOffset()) {
+			setX(mScroller.getCurrX());
+			setY(mScroller.getCurrY());
+			invalidate();
+		}
+
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		startX = getX();
+		startY = getY();
+	}
+
+	public void spingBack() {
+
+		if (mScroller.springBack((int) getX(), (int) getY(), 0, (int) getX(), 0,
+				(int) getY() - 100)) {
+			Log.d("TAG", "getX()=" + getX() + "__getY()=" + getY());
+			invalidate();
+		}
+
+	}
+
+
+}
+
+    代码不到一百行，是不是很简单呀，实现的效果是类似果冻的颤动效果，来来来，凯子哥带你分析下代码实现。
+    首先我们用的是OverScroller，因为和Scroller非常类似，而且增加了回弹支持，所以大部分情况下我们都可以使用OverScroller。我们在构造函数完成初始化，然后因为我们需要记录最开始的位置，在回弹的时候需要用，所以在onSizeChange()完成了起始坐标的初始化。为了完成拖拽功能，我们需要重写onTouch，然后在MOVE事件中，完成控件的位置移动，用offsetLeftAndRight和offsetTopAndBottom即可，参数是一个相对位移的距离，所以很简单就完成了控件跟随手指移动的效果。
+    最后的效果当然是控件回弹，但是这里的回弹并不是用spingBack()完成，而是通过startScroll()完成，只要设置好当前的位置和我们需要位移的距离，然后记住invalidate一下，我们就可以去computeScroll()里面实际的改变控件的位置了，通过getCurrX()就可以获取到如果当前滚动应该的位置，所以setX()就OK啦，很简单是不是？不过要记住invalidate()，这样才能继续往下触发未完成的滚动操作。
+    另外发现没，这个控件叫JellyTextView，就是果冻TextView，因为实现的是有来回颤动的效果，这个怎么实现呢？也很简单，设置一个BounceInterpolation就可以了，so easy~
+    OK，其实现在大部分的Scroller的用法我们都用过了，还剩下一个OverScroll特有的spingBack()和fling()，我们先介绍一个spingBack的用法。
+    springBack(int startX, int startY, int minX, int maxX, int minY, int maxY)
+    看上面的参数，前两个是开始位置，是绝对坐标，minX和maxX是用来设定滚动范围的，也是绝对坐标范围，如果startX不在这个范围里面，比如大于maxX，就会触发computeScroll()，我们可以移动距离，最终回弹到maxX所在的位置，并返回true，从而完成后续的滚动效果，比minX小的话，就会回弹到minX，一样的道理。所以我们可以像上面代码里面一样，判断是否在范围内，在的话，就invalidate()一下，触发滚动动画，所以名字叫spingBack()，即回弹，在上面的视频里有演示效果。参照效果和代码，你应该能看明白用法。
+
+    OK，分析完上面的代码，咱们就还有一个fling()没用了，这个代码咱们可以借助鸿洋的Android 自定义控件 轻松实现360软件详情页 里面用到了这个方法，我简单贴一下代码，不过下面代码经过了我的改造，添加了依附功能
+@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		mVelocityTracker.addMovement(event);
+		int action = event.getActionMasked();
+		float y = event.getY();
+
+		switch (action) {
+		case MotionEvent.ACTION_DOWN:
+			if (!mScroller.isFinished())
+				mScroller.abortAnimation();
+			mVelocityTracker.clear();
+			mVelocityTracker.addMovement(event);
+			mLastY = y;
+			// return true;
+			break;
+		case MotionEvent.ACTION_MOVE:
+			float dy = y - mLastY;
+
+			if (!mDragging  Math.abs(dy) > mTouchSlop) {
+				mDragging = true;
+			}
+			// 如果滑动的距离到达系统默认的最小值，就进行整体布局的移动
+			if (mDragging) {
+				scrollBy(0, (int) -dy);
+				mLastY = y;
+			}
+			break;
+		case MotionEvent.ACTION_CANCEL:
+			mDragging = false;
+			if (!mScroller.isFinished()) {
+				mScroller.abortAnimation();
+			}
+			break;
+		case MotionEvent.ACTION_UP:
+			mDragging = false;
+			mVelocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
+			int velocityY = (int) mVelocityTracker.getYVelocity();
+			// 手指离开之后，根据加速度进行滑动
+			if (Math.abs(velocityY) > mMinimumVelocity) {
+				fling(-velocityY);
+			}
+			mVelocityTracker.clear();
+
+			int currentY = getScrollY();
+			// 下拉
+			isDownSlide = (event.getY() - mFirstY) > 0;
+
+			if (isDownSlide) {
+				if (currentY mTopViewHeight) {
+					Log.d(TAG, "下拉---下滑显示");
+					mScroller.startScroll(0, currentY, 0, -currentY);
+					invalidate();
+				}
+			} else {
+				if (currentY > 0) {
+					Log.d(TAG, "上拉---上滑隐藏");
+					mScroller.startScroll(0, currentY, 0, mTopViewHeight
+							- currentY);
+					invalidate();
+				}
+			}
+			break;
+		}
+
+		return super.onTouchEvent(event);
+	}
+
+    fling()方法里面有一个加速度的参数，我们需要通过VelocityTracker来获取到加速度，VelocityTracker的用法很单一，就像上面一样，当滑动的速度大于最小速度之后，调用fling()，我们再看看fling()的代码
+
+public void fling(int velocityY) {
+		mScroller.fling(0, getScrollY(), 0, velocityY, 0, 0, 0, mTopViewHeight);
+		invalidate();
+	}
+
+  这个几个参数如下，在上面的用法中，mxaY是上部布局高度，所以就可以实现向上滑动的时候，松手后若加速度达到一定值，就能在布局不显示的时候停止，就完成了我们想要的效果。
+public void fling(int startX, int startY, int velocityX, int velocityY,
+            int minX, int maxX, int minY, int maxY)
+
+   不过为了更好的模拟360的布局效果，我对代码进行了一点修改，主要是增加了依附效果，即上部布局的依附，下面附上修改后的代码，有兴趣的可以试一下~
+package com.zhy.view;
+
+import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.OverScroller;
+import android.widget.ScrollView;
+
+import com.zhy.sample.StickyNavLayout.R;
+
+public class StickyNavLayout extends LinearLayout {
+
+	private static String TAG = "TAG";
+
+	/**
+	 * 最顶部的View
+	 */
+	private View mTop;
+	/**
+	 * 导航的View
+	 */
+	private View mNav;
+	private ViewPager mViewPager;
+
+	private int mTopViewHeight;
+	private ScrollView mInnerScrollView;
+	private boolean isTopHidden = false;
+
+	private OverScroller mScroller;
+	private VelocityTracker mVelocityTracker;
+	private int mTouchSlop;
+	private int mMaximumVelocity, mMinimumVelocity;
+
+	private float mLastY;
+	// Down时纪录的Y坐标
+	private float mFirstY;
+	// 是否是下拉
+	private boolean isDownSlide;
+
+	private boolean mDragging;
+
+	public StickyNavLayout(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		setOrientation(LinearLayout.VERTICAL);
+
+		mScroller = new OverScroller(context);
+
+		mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+		mMaximumVelocity = ViewConfiguration.get(context)
+				.getScaledMaximumFlingVelocity();
+		mMinimumVelocity = ViewConfiguration.get(context)
+				.getScaledMinimumFlingVelocity();
+
+		mVelocityTracker = VelocityTracker.obtain();
+
+	}
+
+	@Override
+	protected void onFinishInflate() {
+		super.onFinishInflate();
+		mTop = findViewById(R.id.id_stickynavlayout_topview);
+		mNav = findViewById(R.id.id_stickynavlayout_indicator);
+		View view = findViewById(R.id.id_stickynavlayout_viewpager);
+		if (!(view instanceof ViewPager)) {
+			throw new RuntimeException(
+					"id_stickynavlayout_viewpager show used by ViewPager !");
+		}
+		mViewPager = (ViewPager) view;
+	}
+
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+		// 这是为了设置ViewPager的高度，保证TopView消失之后，能够正好和NavView填充整个屏幕
+		ViewGroup.LayoutParams params = mViewPager.getLayoutParams();
+		params.height = getMeasuredHeight() - mNav.getMeasuredHeight();
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		mTopViewHeight = mTop.getMeasuredHeight();
+	}
+
+	@Override
+	public boolean onInterceptTouchEvent(MotionEvent ev) {
+		int action = ev.getAction();
+		float y = ev.getY();
+
+		switch (action) {
+		case MotionEvent.ACTION_DOWN:
+			mLastY = y;
+			mFirstY = y;
+			break;
+		case MotionEvent.ACTION_MOVE:
+			float dy = y - mLastY;
+			getCurrentScrollView();
+			if (Math.abs(dy) > mTouchSlop) {
+				mDragging = true;
+				// 如果Top的View是显示状态，或者是Fragment位于最上面的位置的时候，就拦截
+				if (!isTopHidden
+						|| (mInnerScrollView.getScrollY() == 0  isTopHidden  dy > 0)) {
+					Log.d(TAG, "-----触摸拦截");
+					return true;
+				}
+			}
+			break;
+		}
+		return super.onInterceptTouchEvent(ev);
+	}
+
+	/**
+	 * 获取当前布局里面的ScrollView
+	 */
+	private void getCurrentScrollView() {
+
+		int currentItem = mViewPager.getCurrentItem();
+		PagerAdapter a = mViewPager.getAdapter();
+		if (a instanceof FragmentPagerAdapter) {
+			FragmentPagerAdapter fadapter = (FragmentPagerAdapter) a;
+			Fragment item = fadapter.getItem(currentItem);
+			mInnerScrollView = (ScrollView) (item.getView()
+					.findViewById(R.id.id_stickynavlayout_innerscrollview));
+		} else if (a instanceof FragmentStatePagerAdapter) {
+			FragmentStatePagerAdapter fsAdapter = (FragmentStatePagerAdapter) a;
+			Fragment item = fsAdapter.getItem(currentItem);
+			mInnerScrollView = (ScrollView) (item.getView()
+					.findViewById(R.id.id_stickynavlayout_innerscrollview));
+		}
+
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+
+		mVelocityTracker.addMovement(event);
+		int action = event.getActionMasked();
+		float y = event.getY();
+
+		switch (action) {
+		case MotionEvent.ACTION_DOWN:
+			if (!mScroller.isFinished())
+				mScroller.abortAnimation();
+			mVelocityTracker.clear();
+			mVelocityTracker.addMovement(event);
+			mLastY = y;
+			// return true;
+			break;
+		case MotionEvent.ACTION_MOVE:
+			float dy = y - mLastY;
+
+			if (!mDragging  Math.abs(dy) > mTouchSlop) {
+				mDragging = true;
+			}
+			// 如果滑动的距离到达系统默认的最小值，就进行整体布局的移动
+			if (mDragging) {
+				scrollBy(0, (int) -dy);
+				mLastY = y;
+			}
+			break;
+		case MotionEvent.ACTION_CANCEL:
+			mDragging = false;
+			if (!mScroller.isFinished()) {
+				mScroller.abortAnimation();
+			}
+			break;
+		case MotionEvent.ACTION_UP:
+			mDragging = false;
+			mVelocityTracker.computeCurrentVelocity(1000, mMaximumVelocity);
+			int velocityY = (int) mVelocityTracker.getYVelocity();
+			// 手指离开之后，根据加速度进行滑动
+			if (Math.abs(velocityY) > mMinimumVelocity) {
+				fling(-velocityY);
+			}
+			mVelocityTracker.clear();
+
+			int currentY = getScrollY();
+			// 下拉
+			isDownSlide = (event.getY() - mFirstY) > 0;
+
+			if (isDownSlide) {
+				if (currentY  mTopViewHeight) {
+					Log.d(TAG, "下拉---下滑显示");
+					mScroller.startScroll(0, currentY, 0, -currentY);
+					invalidate();
+				}
+			} else {
+				if (currentY > 0) {
+					Log.d(TAG, "上拉---上滑隐藏");
+					mScroller.startScroll(0, currentY, 0, mTopViewHeight
+							- currentY);
+					invalidate();
+				}
+			}
+			break;
+		}
+
+		return super.onTouchEvent(event);
+	}
+
+	public void fling(int velocityY) {
+		mScroller.fling(0, getScrollY(), 0, velocityY, 0, 0, 0, mTopViewHeight);
+		invalidate();
+	}
+
+	@Override
+	public void scrollTo(int x, int y) {
+		if (y  0) {
+			y = 0;
+		}
+		if (y > mTopViewHeight) {
+			y = mTopViewHeight;
+		}
+		if (y != getScrollY()) {
+			super.scrollTo(x, y);
+		}
+
+		isTopHidden = getScrollY() == mTopViewHeight;
+
+	}
+
+	@Override
+	public void computeScroll() {
+		if (mScroller.computeScrollOffset()) {
+			scrollTo(0, mScroller.getCurrY());
+			invalidate();
+		}
+	}
+
+}
+
+
+    OK，关于滚动的这些东西基本上就这些吧，不过也都是最基础的，如果能熟悉的运用这些API，就能创造出非常棒的用户体验，大家快来一起滚啊~~
+
+演示代码下载：https://github.com/ZhaoKaiQiang/ScrollerDemo
+</string>
 </resources>

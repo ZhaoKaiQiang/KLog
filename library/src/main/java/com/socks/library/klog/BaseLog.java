@@ -23,24 +23,42 @@ public class BaseLog implements Constant {
     }
 
     public static void printDefault(int type, String tag, String msg) {
+
+        int index = 0;
+        int maxLength = 4000;
+        int countOfSub = msg.length() / maxLength;
+
+        if (countOfSub > 0) {
+            for (int i = 0; i < countOfSub; i++) {
+                String sub = msg.substring(index, index + maxLength);
+                printSub(type, tag, sub);
+                index += maxLength;
+            }
+            printSub(type, tag, msg.substring(index, msg.length()));
+        } else {
+            printSub(type, tag, msg);
+        }
+    }
+
+    private static void printSub(int type, String tag, String sub) {
         switch (type) {
             case V:
-                Log.v(tag, msg);
+                Log.v(tag, sub);
                 break;
             case D:
-                Log.d(tag, msg);
+                Log.d(tag, sub);
                 break;
             case I:
-                Log.i(tag, msg);
+                Log.i(tag, sub);
                 break;
             case W:
-                Log.w(tag, msg);
+                Log.w(tag, sub);
                 break;
             case E:
-                Log.e(tag, msg);
+                Log.e(tag, sub);
                 break;
             case A:
-                Log.wtf(tag, msg);
+                Log.wtf(tag, sub);
                 break;
         }
     }

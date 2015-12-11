@@ -20,6 +20,7 @@ import java.io.File;
  *         15/11/17 扩展功能，添加对文件的支持
  *         15/11/18 扩展功能，增加对XML的支持，修复BUG
  *         15/12/8  扩展功能，添加对任意参数的支持
+ *         15/12/11 扩展功能，增加对无限长字符串支持
  */
 public class KLog implements Constant {
 

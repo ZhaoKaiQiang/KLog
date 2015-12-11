@@ -26,6 +26,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="logWithLong"
+        android:text="Log.d(Long String)" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="logWithTag"
         android:text="Log.d(TAG,Object)" />
 

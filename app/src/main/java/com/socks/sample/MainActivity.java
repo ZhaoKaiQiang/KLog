@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static String XML = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?><!--  Copyright w3school.com.cn --><note><to>George</to><from>John</from><heading>Reminder</heading><body>Don't forget the meeting!</body></note>";
     private static String JSON;
     private static String JSON_LONG;
+    private static String STRING_LONG;
     private AsyncHttpClient httpClient;
 
     @Override
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         httpClient = new AsyncHttpClient();
         JSON_LONG = getResources().getString(R.string.json_long);
         JSON = getResources().getString(R.string.json);
+        STRING_LONG = getString(R.string.string_long);
     }
 
     public void log(View view) {
@@ -63,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         KLog.w(TAG, LOG_MSG);
         KLog.e(TAG, LOG_MSG);
         KLog.a(TAG, LOG_MSG);
+    }
+
+    public void logWithLong(View view) {
+        KLog.d(TAG, STRING_LONG);
     }
 
     public void logWithParams(View view) {
