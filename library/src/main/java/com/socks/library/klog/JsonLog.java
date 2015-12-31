@@ -33,14 +33,10 @@ public class JsonLog {
         }
 
         Util.printLine(tag, true);
-        if (message.length() > 12000) {
-            message = headString + KLog.LINE_SEPARATOR + message;
-            String[] lines = message.split(KLog.LINE_SEPARATOR);
-            for (String line : lines) {
-                Log.d(tag, "║ " + line);
-            }
-        } else {
-            Log.d(tag, "║ " + message);
+        message = headString + KLog.LINE_SEPARATOR + message;
+        String[] lines = message.split(KLog.LINE_SEPARATOR);
+        for (String line : lines) {
+            Log.d(tag, "║ " + line);
         }
         Util.printLine(tag, false);
     }
