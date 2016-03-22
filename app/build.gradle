@@ -16,11 +16,12 @@ android {
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
         release {
             buildConfigField "boolean", "LOG_DEBUG", "false"
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -31,6 +32,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'cz.msebera.android:httpclient:4.3.6'
-    compile 'com.github.zhaokaiqiang.klog:library:1.3.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.4.0'
 //    compile project(':library')
 }

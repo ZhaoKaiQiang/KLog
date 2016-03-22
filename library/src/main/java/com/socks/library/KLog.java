@@ -1,5 +1,8 @@
 package com.socks.library;
 
+
+import android.text.TextUtils;
+
 import com.socks.library.klog.BaseLog;
 import com.socks.library.klog.FileLog;
 import com.socks.library.klog.JsonLog;
@@ -29,6 +32,8 @@ public class KLog {
     public static final String NULL_TIPS = "Log with null object";
     public static final String PARAM = "Param";
     public static final String NULL = "null";
+    public static final String TAG_DEFAULT = "KLog";
+    public static final String SUFFIX = ".java";
 
     public static final int JSON_INDENT = 4;
 
@@ -42,6 +47,7 @@ public class KLog {
     public static final int XML = 0x8;
 
     private static boolean IS_SHOW_LOG = true;
+    private static final int STACK_TRACE_INDEX = 5;
 
     public static void init(boolean isShowLog) {
         IS_SHOW_LOG = isShowLog;
@@ -194,17 +200,28 @@ public class KLog {
     private static String[] wrapperContent(String tagStr, Object... objects) {
 
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
-        int index = 5;
-        String className = stackTrace[index].getFileName();
-        String methodName = stackTrace[index].getMethodName();
-        int lineNumber = stackTrace[index].getLineNumber();
+
+        StackTraceElement targetElement = stackTrace[STACK_TRACE_INDEX];
+        String className = targetElement.getClassName();
+        String[] classNameInfo = className.split("\\.");
+        if (classNameInfo.length > 0) {
+            className = classNameInfo[classNameInfo.length - 1] + SUFFIX;
+        }
+        String methodName = targetElement.getMethodName();
+        int lineNumber = targetElement.getLineNumber();
+
+        if (lineNumber < 0) {
+            lineNumber = 0;
+        }
+
         String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[ (").append(className).append(":").append(lineNumber).append(")#").append(methodNameShort).append(" ] ");
 
         String tag = (tagStr == null ? className : tagStr);
+        if (TextUtils.isEmpty(tag)) {
+            tag = TAG_DEFAULT;
+        }
         String msg = (objects == null) ? NULL_TIPS : getObjectsString(objects);
-        String headString = stringBuilder.toString();
+        String headString = "[ (" + className + ":" + lineNumber + ")#" + methodNameShort + " ] ";
 
         return new String[]{tag, msg, headString};
     }

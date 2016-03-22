@@ -49,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         KLog.a();
     }
 
+    public void logWithNull(View view) {
+        KLog.v(null);
+        KLog.d(null);
+        KLog.i(null);
+        KLog.w(null);
+        KLog.e(null);
+        KLog.a(null);
+    }
+
     public void logWithMsg(View view) {
         KLog.v(LOG_MSG);
         KLog.d(LOG_MSG);
@@ -80,14 +89,6 @@ public class MainActivity extends AppCompatActivity {
         KLog.a(TAG, LOG_MSG, "params1", "params2", this);
     }
 
-    public void logWithNull(View view) {
-        KLog.v(null);
-        KLog.d(null);
-        KLog.i(null);
-        KLog.w(null);
-        KLog.e(null);
-        KLog.a(null);
-    }
 
     public void logWithJson(View view) {
         KLog.json("12345");

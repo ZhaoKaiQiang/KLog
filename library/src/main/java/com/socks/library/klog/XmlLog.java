@@ -2,25 +2,26 @@ package com.socks.library.klog;
 
 import android.util.Log;
 
+
 import com.socks.library.KLog;
 import com.socks.library.Util;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.SAXReader;
-import org.dom4j.io.XMLWriter;
-
-import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 /**
  * Created by zhaokaiqiang on 15/11/18.
  */
-public class XmlLog{
+public class XmlLog {
 
-    public static void printXml(String tag, String xml,String headString) {
+    public static void printXml(String tag, String xml, String headString) {
 
         if (xml != null) {
             xml = XmlLog.formatXML(xml);
@@ -40,32 +41,18 @@ public class XmlLog{
     }
 
     public static String formatXML(String inputXML) {
-        XMLWriter writer = null;
-        String requestXML = null;
         try {
-            SAXReader reader = new SAXReader();
-            Document document = reader.read(new StringReader(inputXML));
-            StringWriter stringWriter = new StringWriter();
-            OutputFormat format = new OutputFormat(" ", true);
-            writer = new XMLWriter(stringWriter, format);
-            writer.write(document);
-            writer.flush();
-            requestXML = stringWriter.getBuffer().toString();
-        } catch (IOException e) {
+            Source xmlInput = new StreamSource(new StringReader(inputXML));
+            StreamResult xmlOutput = new StreamResult(new StringWriter());
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            transformer.transform(xmlInput, xmlOutput);
+            return xmlOutput.getWriter().toString().replaceFirst(">", ">\n");
+        } catch (Exception e) {
+            e.printStackTrace();
             return inputXML;
-        } catch (DocumentException e) {
-            return inputXML;
-        } finally {
-            if (writer != null) {
-                try {
-                    writer.close();
-                } catch (IOException e) {
-                    return inputXML;
-                }
-            }
         }
-
-        return requestXML;
     }
 
 }

@@ -6,7 +6,8 @@ This is a useful log tool for Android
 
 Android LogCat 工具类，目前功能：
 
-- 无参数打印
+- 全局打印开关
+- 无参数快捷打印
 - 打印所在行号
 - 打印所在函数
 - AS点击方法名自动跳转
@@ -15,6 +16,7 @@ Android LogCat 工具类，目前功能：
 - Log信息存储到文件(6.0以上需要动态申请存储空间权限)
 - 变长参数打印
 - 无logcat最多4000字符打印限制
+- 只有10k，却功能强大
 
 中文文档请戳[这里](http://blog.csdn.net/zhaokaiqiang1992/article/details/49837627)。
 
@@ -25,9 +27,6 @@ Android LogCat 工具类，目前功能：
 - Can use KLog.d() with no tag
 - Print log info with line number and method name
 - Jump to the position where the log is invoked, by click in the Android Studio Logcat
-
-##Update
-
 - Add support for Long JSON String
 - KLog.file() could save the log to file
 - Add support for xml format string
@@ -87,16 +86,12 @@ print xml format string in logcat
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:1.3.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.4.0'
 }
 ```
 ##Eclipse
 
-You need add klog.jar into your project ,because the klog dependences on dom4j，so you alse need add the dom4j-2.0.0-RC1.jar to your project . The jar file is in the library's libs .
-
-##Notice
-
-If you don't need the method -- KLog.xml() ，you can delete the method about it ,so that you can decrease the almost size of this library.
+You need add klog.jar into your project libs
 
 ##License
 

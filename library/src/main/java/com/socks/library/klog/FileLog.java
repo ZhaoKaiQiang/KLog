@@ -14,7 +14,7 @@ import java.util.Random;
 /**
  * Created by zhaokaiqiang on 15/11/18.
  */
-public class FileLog{
+public class FileLog {
 
     public static void printFile(String tag, File targetDirectory, String fileName, String headString, String msg) {
 
@@ -55,10 +55,7 @@ public class FileLog{
 
     private static String getFileName() {
         Random random = new Random();
-        StringBuilder stringBuilder = new StringBuilder("KLog_");
-        stringBuilder.append(Long.toString(System.currentTimeMillis() + random.nextInt(10000)).substring(4));
-        stringBuilder.append(".txt");
-        return stringBuilder.toString();
+        return "KLog_" + Long.toString(System.currentTimeMillis() + random.nextInt(10000)).substring(4) + ".txt";
     }
 
 }
