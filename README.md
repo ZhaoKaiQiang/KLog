@@ -36,52 +36,6 @@ Android LogCat 工具类，目前功能：
 
 ![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/demo.gif)
 
-###KLog.d()
-
-Use this method , you can get a log like follwing，default tag is current class name
-
-![](http://i13.tietuku.com/6eac96ebfbea82cb.png)
-
-###KLog.d(String)
-
-you can print a String with this method ,default tag is current class name
-![](http://i13.tietuku.com/95871d0388a27777.png)
-
-###KLog.d(Tag,String)
-
-you can set tag by youself , the result is as bollow 
-![](http://i13.tietuku.com/f0286fa45f975346.png)
-
-###KLog.json(String)
-
-you can print a String with json format ,and it will be formated as following
-![](http://i13.tietuku.com/767fa81ad27c8f9f.png)
-
-###KLog.json(Tag,String)
-
-as same as above , but with a tag whitch are set by yourself
-![](http://i13.tietuku.com/bc9714547a4f50fe.png)
-
-###KLog.file()
-
-you can save the log string in to file !
-
-```
- KLog.file(TAG, Environment.getExternalStorageDirectory(), "test.txt", JSON_LONG);
-```
-
-![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/file.png)
-
-###KLog.xml()
-
-print xml format string in logcat
-
-```
- KLog.xml(XML);
-```
-
-![](https://github.com/ZhaoKaiQiang/KLog/blob/master/image/xml.png)
-
 ##JCenter
 
 ```
