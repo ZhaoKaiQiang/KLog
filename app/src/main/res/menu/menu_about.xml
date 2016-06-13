@@ -1,16 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
         android:id="@+id/action_github"
-        android:orderInCategory="100"
-        android:title="GITHUB"
-        app:showAsAction="always" />
+        android:title="@string/github"
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/action_csdn"
-        android:orderInCategory="100"
-        android:title="CSDN"
-        app:showAsAction="always" />
+        android:id="@+id/action_blog"
+        android:title="@string/blog"
+        app:showAsAction="ifRoom" />
 </menu>

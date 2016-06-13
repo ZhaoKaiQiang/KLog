@@ -12,6 +12,7 @@ public class KLogApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        KLog.init(BuildConfig.LOG_DEBUG);
+//        KLog.init(BuildConfig.LOG_DEBUG);
+        KLog.init(BuildConfig.LOG_DEBUG, "Kai");
     }
 }

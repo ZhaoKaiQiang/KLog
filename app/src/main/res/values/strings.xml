@@ -519,4 +519,6 @@ public class StickyNavLayout extends LinearLayout {
 
 演示代码下载：https://github.com/ZhaoKaiQiang/ScrollerDemo
 </string>
+	<string name="github">GITHUB</string>
+	<string name="blog">BLOG</string>
 </resources>
