@@ -18,7 +18,7 @@ Android LogCat 工具类，目前功能：
 - 无logcat最多4000字符打印限制
 - 只有10k，却功能强大
 
-中文文档请戳[这里](http://blog.csdn.net/zhaokaiqiang1992/article/details/49837627)。
+中文文档请戳[这里](http://kaizige.vip/2016/06/13/klog/)。
 
 ---
 
@@ -40,7 +40,7 @@ Android LogCat 工具类，目前功能：
 
 ```
 dependencies {
-    compile 'com.github.zhaokaiqiang.klog:library:1.4.0'
+    compile 'com.github.zhaokaiqiang.klog:library:1.5.0'
 }
 ```
 ##Eclipse
