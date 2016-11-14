@@ -6,17 +6,17 @@ This is a useful log tool for Android
 
 Android LogCat 工具类，目前功能：
 
-- 全局打印开关
-- 无参数快捷打印
-- 打印所在行号
-- 打印所在函数
-- AS点击方法名自动跳转
-- Json格式自动解析打印
-- xml格式自定解析打印
-- Log信息存储到文件(6.0以上需要动态申请存储空间权限)
-- 变长参数打印
-- 无logcat最多4000字符打印限制
-- 只有10k，却功能强大
+- 支持显示行号
+- 支持显示Log所在函数名称
+- 支持无Tag快捷打印
+- 支持在Android Studio开发IDE中，点击函数名称，跳转至Log所在位置
+- 支持JSON字符串解析打印
+- 支持XML字符串解析打印
+- 支持Log信息存储到文件
+- 依赖库非常小，只有不到10K
+- 支持无限长字符串打印，无Logcat4000字符限制
+- 支持变长参数，任意个数打印参数
+- 支持设置全局Tag
 
 中文文档请戳[这里](http://kaizige.vip/2016/06/13/klog/)。
 
@@ -67,4 +67,4 @@ limitations under the License.
 
 ##About me
 - [Android Developer](http://weibo.com/zhaokaiqiang1992)
-- [CSDN Blog](http://blog.csdn.net/zhaokaiqiang1992)
+- [Blog](http://kaizige.vip/)
