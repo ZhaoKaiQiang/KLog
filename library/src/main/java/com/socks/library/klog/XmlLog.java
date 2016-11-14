@@ -4,7 +4,7 @@ import android.util.Log;
 
 
 import com.socks.library.KLog;
-import com.socks.library.Util;
+import com.socks.library.KLogUtil;
 
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -30,17 +30,17 @@ public class XmlLog {
             xml = headString + KLog.NULL_TIPS;
         }
 
-        Util.printLine(tag, true);
+        KLogUtil.printLine(tag, true);
         String[] lines = xml.split(KLog.LINE_SEPARATOR);
         for (String line : lines) {
-            if (!Util.isEmpty(line)) {
+            if (!KLogUtil.isEmpty(line)) {
                 Log.d(tag, "║ " + line);
             }
         }
-        Util.printLine(tag, false);
+        KLogUtil.printLine(tag, false);
     }
 
-    public static String formatXML(String inputXML) {
+    private static String formatXML(String inputXML) {
         try {
             Source xmlInput = new StreamSource(new StringReader(inputXML));
             StreamResult xmlOutput = new StreamResult(new StringWriter());

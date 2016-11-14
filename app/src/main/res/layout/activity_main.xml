@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        app:theme="@style/ToolbarTheme"/>
+        app:theme="@style/ToolbarTheme" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,6 +22,12 @@
             android:orientation="vertical"
             android:paddingLeft="16dp"
             android:paddingRight="16dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="logDebug"
+                android:text="Log.debug()" />
 
             <Button
                 android:layout_width="match_parent"
@@ -94,6 +100,12 @@
                 android:layout_height="wrap_content"
                 android:onClick="logWithXmlFromNet"
                 android:text="Log.xml(FROM NET)" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="logTraceStack"
+                android:text="Log.trace()" />
 
         </LinearLayout>
     </ScrollView>

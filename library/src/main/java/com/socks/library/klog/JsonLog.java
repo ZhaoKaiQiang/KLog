@@ -3,7 +3,7 @@ package com.socks.library.klog;
 import android.util.Log;
 
 import com.socks.library.KLog;
-import com.socks.library.Util;
+import com.socks.library.KLogUtil;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,12 +32,12 @@ public class JsonLog {
             message = msg;
         }
 
-        Util.printLine(tag, true);
+        KLogUtil.printLine(tag, true);
         message = headString + KLog.LINE_SEPARATOR + message;
         String[] lines = message.split(KLog.LINE_SEPARATOR);
         for (String line : lines) {
             Log.d(tag, "║ " + line);
         }
-        Util.printLine(tag, false);
+        KLogUtil.printLine(tag, false);
     }
 }

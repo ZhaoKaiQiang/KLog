@@ -9,19 +9,21 @@ import com.socks.library.KLog;
  */
 public class BaseLog {
 
+    private static final int MAX_LENGTH = 4000;
+
     public static void printDefault(int type, String tag, String msg) {
 
         int index = 0;
-        int maxLength = 4000;
-        int countOfSub = msg.length() / maxLength;
+        int length = msg.length();
+        int countOfSub = length / MAX_LENGTH;
 
         if (countOfSub > 0) {
             for (int i = 0; i < countOfSub; i++) {
-                String sub = msg.substring(index, index + maxLength);
+                String sub = msg.substring(index, index + MAX_LENGTH);
                 printSub(type, tag, sub);
-                index += maxLength;
+                index += MAX_LENGTH;
             }
-            printSub(type, tag, msg.substring(index, msg.length()));
+            printSub(type, tag, msg.substring(index, length));
         } else {
             printSub(type, tag, msg);
         }

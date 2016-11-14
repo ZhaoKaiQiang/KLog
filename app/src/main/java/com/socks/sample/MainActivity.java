@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void handleMessage(Message msg) {
-            KLog.d("handleMessage");
-            handler.sendEmptyMessageDelayed(0, 3000);
+            KLog.d("Inner Class Test");
         }
     };
 
@@ -62,6 +61,16 @@ public class MainActivity extends AppCompatActivity {
         JSON_LONG = getResources().getString(R.string.json_long);
         JSON = getResources().getString(R.string.json);
         STRING_LONG = getString(R.string.string_long);
+    }
+
+    public void logTraceStack(View view) {
+        TestTraceUtil.testTrace();
+    }
+
+    public void logDebug(View view) {
+        KLog.debug();
+        KLog.debug("This is a debug message");
+        KLog.debug("DEBUG", "params1", "params2", this);
     }
 
     public void log(View view) {

@@ -10,6 +10,8 @@ import com.socks.library.klog.JsonLog;
 import com.socks.library.klog.XmlLog;
 
 import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * This is a Log tool，with this you can the following
@@ -25,9 +27,11 @@ import java.io.File;
  *         15/11/18 扩展功能，增加对XML的支持，修复BUG
  *         15/12/8  扩展功能，添加对任意参数的支持
  *         15/12/11 扩展功能，增加对无限长字符串支持
- *         16/6/13  扩展功能，添加对自定义全局Tag的支持
+ *         16/6/13  扩展功能，添加对自定义全局Tag的支持,修复内部类不能点击跳转的BUG
+ *         16/6/15  扩展功能，添加不能关闭的KLog.debug(),用于发布版本的Log打印,优化部分代码
+ *         16/6/20  扩展功能，添加堆栈跟踪功能KLog.trace()
  */
-public class KLog {
+public final class KLog {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     public static final String NULL_TIPS = "Log with null object";
@@ -39,8 +43,8 @@ public class KLog {
     private static final String SUFFIX = ".java";
 
     public static final int JSON_INDENT = 4;
-    public static final int V = 0x1;
 
+    public static final int V = 0x1;
     public static final int D = 0x2;
     public static final int I = 0x3;
     public static final int W = 0x4;
@@ -50,7 +54,8 @@ public class KLog {
     private static final int JSON = 0x7;
     private static final int XML = 0x8;
 
-    private static final int STACK_TRACE_INDEX = 5;
+    private static final int STACK_TRACE_INDEX_5 = 5;
+    private static final int STACK_TRACE_INDEX_4 = 4;
 
     private static String mGlobalTag;
     private static boolean mIsGlobalTagEmpty = true;
@@ -166,13 +171,58 @@ public class KLog {
         printFile(tag, targetDirectory, fileName, msg);
     }
 
+    public static void debug() {
+        printDebug(null, DEFAULT_MESSAGE);
+    }
+
+    public static void debug(Object msg) {
+        printDebug(null, msg);
+    }
+
+    public static void debug(String tag, Object... objects) {
+        printDebug(tag, objects);
+    }
+
+    public static void trace() {
+        printStackTrace();
+    }
+
+    private static void printStackTrace() {
+
+        if (!IS_SHOW_LOG) {
+            return;
+        }
+
+        Throwable tr = new Throwable();
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        tr.printStackTrace(pw);
+        pw.flush();
+        String message = sw.toString();
+
+        String traceString[] = message.split("\\n\\t");
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        for (String trace : traceString) {
+            if (trace.contains("at com.socks.library.KLog")) {
+                continue;
+            }
+            sb.append(trace).append("\n");
+        }
+        String[] contents = wrapperContent(STACK_TRACE_INDEX_4, null, sb.toString());
+        String tag = contents[0];
+        String msg = contents[1];
+        String headString = contents[2];
+        BaseLog.printDefault(D, tag, headString + msg);
+    }
+
     private static void printLog(int type, String tagStr, Object... objects) {
 
         if (!IS_SHOW_LOG) {
             return;
         }
 
-        String[] contents = wrapperContent(tagStr, objects);
+        String[] contents = wrapperContent(STACK_TRACE_INDEX_5, tagStr, objects);
         String tag = contents[0];
         String msg = contents[1];
         String headString = contents[2];
@@ -193,6 +243,15 @@ public class KLog {
                 XmlLog.printXml(tag, msg, headString);
                 break;
         }
+
+    }
+
+    private static void printDebug(String tagStr, Object... objects) {
+        String[] contents = wrapperContent(STACK_TRACE_INDEX_5, tagStr, objects);
+        String tag = contents[0];
+        String msg = contents[1];
+        String headString = contents[2];
+        BaseLog.printDefault(D, tag, headString + msg);
     }
 
 
@@ -202,7 +261,7 @@ public class KLog {
             return;
         }
 
-        String[] contents = wrapperContent(tagStr, objectMsg);
+        String[] contents = wrapperContent(STACK_TRACE_INDEX_5, tagStr, objectMsg);
         String tag = contents[0];
         String msg = contents[1];
         String headString = contents[2];
@@ -210,11 +269,11 @@ public class KLog {
         FileLog.printFile(tag, targetDirectory, fileName, headString, msg);
     }
 
-    private static String[] wrapperContent(String tagStr, Object... objects) {
+    private static String[] wrapperContent(int stackTraceIndex, String tagStr, Object... objects) {
 
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
-        StackTraceElement targetElement = stackTrace[STACK_TRACE_INDEX];
+        StackTraceElement targetElement = stackTrace[stackTraceIndex];
         String className = targetElement.getClassName();
         String[] classNameInfo = className.split("\\.");
         if (classNameInfo.length > 0) {
@@ -232,8 +291,6 @@ public class KLog {
             lineNumber = 0;
         }
 
-        String methodNameShort = methodName.substring(0, 1).toUpperCase() + methodName.substring(1);
-
         String tag = (tagStr == null ? className : tagStr);
 
         if (mIsGlobalTagEmpty && TextUtils.isEmpty(tag)) {
@@ -243,7 +300,7 @@ public class KLog {
         }
 
         String msg = (objects == null) ? NULL_TIPS : getObjectsString(objects);
-        String headString = "[ (" + className + ":" + lineNumber + ")#" + methodNameShort + " ] ";
+        String headString = "[ (" + className + ":" + lineNumber + ")#" + methodName + " ] ";
 
         return new String[]{tag, msg, headString};
     }
