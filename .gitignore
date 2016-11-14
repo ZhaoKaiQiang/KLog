@@ -28,3 +28,4 @@ proguard/
 
 # Log Files
 *.log
+*.iml
