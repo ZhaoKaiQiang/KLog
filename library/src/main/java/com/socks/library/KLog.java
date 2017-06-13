@@ -270,7 +270,6 @@ public final class KLog {
     }
 
     private static String[] wrapperContent(int stackTraceIndex, String tagStr, Object... objects) {
-
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
         StackTraceElement targetElement = stackTrace[stackTraceIndex];
@@ -291,12 +290,12 @@ public final class KLog {
             lineNumber = 0;
         }
 
-        String tag = (tagStr == null ? className : tagStr);
+        //1. 如果没有全局 那么就先设置为默认 ,否则为全局
+        String tag = mIsGlobalTagEmpty ? TAG_DEFAULT : mGlobalTag;
 
-        if (mIsGlobalTagEmpty && TextUtils.isEmpty(tag)) {
-            tag = TAG_DEFAULT;
-        } else if (!mIsGlobalTagEmpty) {
-            tag = mGlobalTag;
+        //2. 如果自定义的tag 不为空那么设置为自定义tag
+        if (!TextUtils.isEmpty(tagStr)) {
+            tag = tagStr;
         }
 
         String msg = (objects == null) ? NULL_TIPS : getObjectsString(objects);
