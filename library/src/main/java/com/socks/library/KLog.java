@@ -1,9 +1,7 @@
 package com.socks.library;
 
 
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
-
 import com.socks.library.klog.BaseLog;
 import com.socks.library.klog.FileLog;
 import com.socks.library.klog.JsonLog;
@@ -30,6 +28,7 @@ import java.io.StringWriter;
  *         16/6/13  扩展功能，添加对自定义全局Tag的支持,修复内部类不能点击跳转的BUG
  *         16/6/15  扩展功能，添加不能关闭的KLog.debug(),用于发布版本的Log打印,优化部分代码
  *         16/6/20  扩展功能，添加堆栈跟踪功能KLog.trace()
+ *
  */
 public final class KLog {
 
@@ -65,7 +64,7 @@ public final class KLog {
         IS_SHOW_LOG = isShowLog;
     }
 
-    public static void init(boolean isShowLog, @Nullable String tag) {
+    public static void init(boolean isShowLog, String tag) {
         IS_SHOW_LOG = isShowLog;
         mGlobalTag = tag;
         mIsGlobalTagEmpty = TextUtils.isEmpty(mGlobalTag);
@@ -274,14 +273,16 @@ public final class KLog {
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
 
         StackTraceElement targetElement = stackTrace[stackTraceIndex];
+        String fileName = targetElement.getFileName();
         String className = targetElement.getClassName();
+        String suffix = fileName.substring(fileName.lastIndexOf("."));
         String[] classNameInfo = className.split("\\.");
         if (classNameInfo.length > 0) {
-            className = classNameInfo[classNameInfo.length - 1] + SUFFIX;
+            className = classNameInfo[classNameInfo.length - 1] + suffix;
         }
 
         if (className.contains("$")) {
-            className = className.split("\\$")[0] + SUFFIX;
+            className = className.split("\\$")[0] +suffix;
         }
 
         String methodName = targetElement.getMethodName();
